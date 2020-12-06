@@ -1,0 +1,573 @@
+Name: P5_All_Out_Attack
+Animation Length: 10
+Animation FPS: 30
+Textures:
+    Alpha Test Texture:
+        Bilinear: true
+        Path: assets/alpha_test.png
+    Checkers Texture:
+        Bilinear: true
+        Path: assets/checkers.png
+    LightFlare:
+        Bilinear: true
+        Path: I:/Downloads/particles (1)/particles/LightFlare.tga
+    letter_5:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/letter_5.png
+    letter_p:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/letter_p.png
+    letter_person5:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/letter_person5.png
+Cubemaps:
+    {}
+Meshes:
+    {}
+Materials:
+    Alpha Test Material:
+        Shader: Alpha Test Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: Alpha Test Texture
+                Use Texture: true
+    Blinn-Phong Material:
+        Shader: Blinn-Phong Shader
+        Uniforms:
+            Diffuse:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0.75
+                Color Map: LightFlare
+                Use Texture: false
+            Emissive:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0
+                Color Map: ""
+                Use Texture: false
+            IndexOfRefraction: 1
+            Shininess: 20
+            Specular:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: ""
+                Use Texture: false
+            Transmittence:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0
+                Color Map: ""
+                Use Texture: false
+    Blinn-Phong Spotlight Material:
+        Shader: Blinn-Phong Spotlight Shader
+        Uniforms:
+            Diffuse:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0.75
+                Color Map: ""
+                Use Texture: false
+            Emissive:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0
+                Color Map: ""
+                Use Texture: false
+            IndexOfRefraction: 1
+            Shininess: 20
+            Specular:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: ""
+                Use Texture: false
+            Transmittence:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0
+                Color Map: ""
+                Use Texture: false
+    Depth Map Material:
+        Shader: Depth Shader
+        Uniforms:
+            {}
+    Emissive:
+        Shader: Emissive Shader
+        Uniforms:
+            AmbientColor:
+                A:  1
+                B:  1
+                G:  1
+                R:  1
+            Color:
+                A:  1
+                B:  1
+                G:  1
+                R:  1
+            ConstantAttenuation: 1
+            LinearAttenuation: 0
+            QuadraticAttenuation: 0
+    Light Flare:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: LightFlare
+                Use Texture: true
+    Material Letter 5:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: letter_5
+                Use Texture: true
+    Material Letter P:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: letter_p
+                Use Texture: true
+    Material Red:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  1
+                Color Map: ""
+                Use Texture: false
+    Material Word Persona5:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: letter_person5
+                Use Texture: true
+    Textured Material:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: Checkers Texture
+                Use Texture: true
+    Toon Material:
+        Shader: Toon Shader
+        Uniforms:
+            Diffuse:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0.75
+                Color Map: ""
+                Use Texture: false
+            Emissive:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0
+                Color Map: ""
+                Use Texture: false
+            IndexOfRefraction: 1
+            Shininess: 20
+            Specular:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: ""
+                Use Texture: false
+            Transmittence:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  0
+                Color Map: ""
+                Use Texture: false
+ShaderPrograms:
+    Alpha Test Shader:
+        Fragment: ""
+        Geometry: ""
+        Trace Compatible: false
+        Vertex: assets/texture.vert
+    Blinn-Phong Shader:
+        Fragment: ""
+        Geometry: ""
+        Trace Compatible: true
+        Vertex: ""
+    Blinn-Phong Spotlight Shader:
+        Fragment: ""
+        Geometry: ""
+        Trace Compatible: true
+        Vertex: ""
+    Depth Shader:
+        Fragment: ""
+        Geometry: ""
+        Trace Compatible: false
+        Vertex: assets/internal/position.vert
+    Emissive Shader:
+        Fragment: assets/emissive.frag
+        Geometry: ""
+        Trace Compatible: false
+        Vertex: ""
+    Textured Shader:
+        Fragment: assets/texture.frag
+        Geometry: ""
+        Trace Compatible: false
+        Vertex: assets/texture.vert
+    Toon Shader:
+        Fragment: ""
+        Geometry: ""
+        Trace Compatible: true
+        Vertex: ""
+Root:
+    Name: Root
+    Enabled: true
+    Components:
+        Transform:
+            Rotation:
+                X:  0
+                Y:  0
+                Z:  0
+            Scale:
+                X:  1
+                Y:  1
+                Z:  1
+            Translation:
+                X:  0
+                Y:  0
+                Z:  0
+    Children:
+        -   Name: Render Camera
+            Enabled: true
+            Components:
+                Camera:
+                    FOV: 44
+                    Far Plane: 100
+                    Near Plane: 0.1
+                    Orthographic View Width: 1
+                    Perspective Camera?: true
+                    Render Height (px): 720
+                    Render Width (px): 1280
+                    Trace:
+                        Beer's Law: false
+                        Enable BVH Acceleration: true
+                        Fresnel Term: false
+                        Maximum Recursion Depth: 5
+                        Reflections: true
+                        Refractions: true
+                        Sample Settings:
+                            Aperture Size: 0
+                            Caustics: true
+                            Difference Threshold: 0.02
+                            Diffuse Reflection: true
+                            Focus Distance: 1
+                            Maximum Samples: 2
+                            Minimum Samples: 0
+                            Monte Carlo: 0
+                            Random Single Branching: true
+                            Sample Count Type: 0
+                            Samples Per Pixel: 0
+                            Std. Error Threshold: 0.02
+                        Shadows: 2
+                    Trace Debugger:
+                        Show Diffuse Reflection Rays: true
+                        Show Reflection Rays: true
+                        Show Refraction Rays: true
+                        Show Shadow Rays: true
+                        Show Surface Normals: true
+                Transform:
+                    Rotation:
+                        X:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [1.2333, 1.1333, 0, 1.3, 1.4, 2.2667, 2.3667, 2, 1.0667, 3, 3.1667, 3.2, 3.4333, 2.1333, 2.2, 3.3333]
+                            FrameValues: [0.98602, -1.9552, 0, -1.1301, -0.02862, 1.0111, 0.027867, -0.020083, 1.9191, -0.00037633, -2.0621, 1.0164, -0.056863, 1.9852, -0.98355, -1.0736]
+                        Y:  0
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1, 1.1333, 1.2, 1.3667, 2, 2.1333, 2.2667, 2.3333, 2.9667, 3.1, 3.1667, 3.3]
+                            FrameValues: [0.0019288, 0.97535, -1.0135, 0, 0.018768, -0.99471, 0.95717, 0.018768, -0.018768, -1.0698, 0.95717, 1.8626e-09]
+                    Scale:
+                        X:  0.54175
+                        Y:  1
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [2.0667, 2.1667, 1.2333, 1.1667, 2.2333, 1.1333, 3, 3.2333, 3.1333, 3.1]
+                            FrameValues: [0.95075, 1.0503, 1, 0.94737, 0.99989, 1.0475, 0.99758, 0.99989, 0.94894, 1.0509]
+                    Translation:
+                        X:  0
+                        Y:  0
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1.9, 2.1, 2.1667, 2.4667]
+                            FrameValues: [3.5, 3.5, 3.5, 3.5]
+            Children:
+                []
+        -   Name: Key Light
+            Enabled: true
+            Components:
+                DirectionalLight:
+                    Ambient:
+                        A:  1
+                        B:  0
+                        G:  0
+                        R:  0
+                    Angular Size (Trace): 0
+                    Color:
+                        A:  1
+                        B:  1
+                        G:  1
+                        R:  1
+                    Intensity Multiplier: 1.5
+                Transform:
+                    Rotation:
+                        X:  45
+                        Y:  45
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  1.4142
+                        Z:  1.4142
+            Children:
+                []
+        -   Name: Fill Light
+            Enabled: true
+            Components:
+                DirectionalLight:
+                    Ambient:
+                        A:  1
+                        B:  0
+                        G:  0
+                        R:  0
+                    Angular Size (Trace): 0
+                    Color:
+                        A:  1
+                        B:  0
+                        G:  0
+                        R:  0.3
+                    Intensity Multiplier: 1
+                Transform:
+                    Rotation:
+                        X:  -135
+                        Y:  45
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  -1.4142
+                        Z:  -1.4142
+            Children:
+                []
+        -   Name: Plane 2
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Material Red
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  10
+                        Y:  10
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  0
+                        Z:  -2
+            Children:
+                []
+        -   Name: Plane 3
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Material Letter P
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [4.9667, 7.9333]
+                            FrameValues: [0, -10.048]
+                        Y:  4.1575
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0, 1]
+                            FrameValues: [10.371, 0.10305]
+            Children:
+                []
+        -   Name: Plane 4
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Material Letter 5
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [5, 6.8667]
+                            FrameValues: [0, 9.966]
+                        Y:  0
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1, 2]
+                            FrameValues: [9.8886, 0.2]
+            Children:
+                []
+        -   Name: Plane 5
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Material Word Persona5
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [7.0333, 7.2667, 7.4333, 7.7667]
+                            FrameValues: [0, -25.286, 24.937, -0.24211]
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [6, 6.3333, 6.7333, 6.6, 7]
+                            FrameValues: [-0.091526, 10.181, 9.9178, -8.821, 0.034672]
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [8.4, 8, 8.8667]
+                            FrameValues: [-0.97934, -0.022367, 4.0356]
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [2, 3]
+                            FrameValues: [10.323, 0.3]
+            Children:
+                []
+        -   Name: Particle System 1
+            Enabled: false
+            Components:
+                Plane:
+                    Material: ""
+                    Subdivisions: 0
+                ParticleSystem:
+                    Billboard: true
+                    Constant Force:
+                        X:  0
+                        Y:  -9.8
+                        Z:  0
+                    Drag Coefficient: 0
+                    Geometry: 2
+                    Initial Velocity:
+                        X:  5
+                        Y:  5
+                        Z:  0
+                    Mass: 0.1
+                    Material: Material Word Persona5
+                    Period (s): 0.5
+                    Scale: 1
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+            Children:
+                []
