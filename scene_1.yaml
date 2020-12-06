@@ -10,13 +10,13 @@ Textures:
         Path: I:/Downloads/particles (1)/particles/LightFlare.tga
     joker_background:
         Bilinear: true
-        Path: ../../../../../P5/Persona5Animation/assets/joker_background.png
+        Path: C:/P5/Persona5Animation/assets/joker_background.png
     letter_5:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/letter_5.png
     letter_p:
         Bilinear: true
-        Path: ../../../../../P5/Persona5Animation/assets/letter_p.png
+        Path: C:/P5/Persona5Animation/assets/letter_p.png
     letter_person5:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/letter_person5.png
