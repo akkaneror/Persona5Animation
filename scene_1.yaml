@@ -2,21 +2,21 @@ Name: P5_All_Out_Attack
 Animation Length: 10
 Animation FPS: 30
 Textures:
-    Alpha Test Texture:
-        Bilinear: true
-        Path: assets/alpha_test.png
     Checkers Texture:
         Bilinear: true
         Path: assets/checkers.png
     LightFlare:
         Bilinear: true
         Path: I:/Downloads/particles (1)/particles/LightFlare.tga
+    joker_background:
+        Bilinear: true
+        Path: ../../../../../P5/Persona5Animation/assets/joker_background.png
     letter_5:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/letter_5.png
     letter_p:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/letter_p.png
+        Path: ../../../../../P5/Persona5Animation/assets/letter_p.png
     letter_person5:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/letter_person5.png
@@ -28,14 +28,7 @@ Materials:
     Alpha Test Material:
         Shader: Alpha Test Shader
         Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: Alpha Test Texture
-                Use Texture: true
+            {}
     Blinn-Phong Material:
         Shader: Blinn-Phong Shader
         Uniforms:
@@ -140,6 +133,17 @@ Materials:
                     G:  0.49804
                     R:  0.49804
                 Color Map: LightFlare
+                Use Texture: true
+    Joker Background:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: joker_background
                 Use Texture: true
     Material Letter 5:
         Shader: Textured Shader
@@ -299,26 +303,23 @@ Root:
                     Render Height (px): 720
                     Render Width (px): 1280
                     Trace:
-                        Beer's Law: false
+                        Aperture Size: 0
+                        Caustics: true
+                        Difference Threshold: 0.02
+                        Diffuse Reflection: true
                         Enable BVH Acceleration: true
-                        Fresnel Term: false
+                        Focus Distance: 1
                         Maximum Recursion Depth: 5
+                        Maximum Samples: 2
+                        Minimum Samples: 0
+                        Monte Carlo: 0
+                        Random Single Branching: true
                         Reflections: true
                         Refractions: true
-                        Sample Settings:
-                            Aperture Size: 0
-                            Caustics: true
-                            Difference Threshold: 0.02
-                            Diffuse Reflection: true
-                            Focus Distance: 1
-                            Maximum Samples: 2
-                            Minimum Samples: 0
-                            Monte Carlo: 0
-                            Random Single Branching: true
-                            Sample Count Type: 0
-                            Samples Per Pixel: 0
-                            Std. Error Threshold: 0.02
+                        Sample Count Type: 0
+                        Samples Per Pixel: 0
                         Shadows: 2
+                        Std. Error Threshold: 0.02
                     Trace Debugger:
                         Show Diffuse Reflection Rays: true
                         Show Reflection Rays: true
@@ -422,7 +423,7 @@ Root:
             Enabled: true
             Components:
                 Plane:
-                    Material: Material Red
+                    Material: Joker Background
                     Subdivisions: 0
                 Transform:
                     Rotation:
@@ -430,9 +431,9 @@ Root:
                         Y:  0
                         Z:  0
                     Scale:
-                        X:  10
-                        Y:  10
-                        Z:  1
+                        X:  5
+                        Y:  6
+                        Z:  5
                     Translation:
                         X:  0
                         Y:  0
@@ -460,7 +461,7 @@ Root:
                             Wrap: false
                             FrameTimes: [4.9667, 7.9333]
                             FrameValues: [0, -10.048]
-                        Y:  4.1575
+                        Y:  0
                         Z:
                             Interpolation: Linear
                             Wrap: false
@@ -541,7 +542,6 @@ Root:
                     Material: ""
                     Subdivisions: 0
                 ParticleSystem:
-                    Billboard: true
                     Constant Force:
                         X:  0
                         Y:  -9.8
