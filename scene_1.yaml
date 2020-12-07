@@ -2,6 +2,9 @@ Name: P5_All_Out_Attack
 Animation Length: 10
 Animation FPS: 30
 Textures:
+    Alpha Test Texture:
+        Bilinear: true
+        Path: assets/alpha_test.png
     Checkers Texture:
         Bilinear: true
         Path: assets/checkers.png
@@ -28,7 +31,14 @@ Materials:
     Alpha Test Material:
         Shader: Alpha Test Shader
         Uniforms:
-            {}
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: Alpha Test Texture
+                Use Texture: true
     Blinn-Phong Material:
         Shader: Blinn-Phong Shader
         Uniforms:
@@ -123,17 +133,6 @@ Materials:
             ConstantAttenuation: 1
             LinearAttenuation: 0
             QuadraticAttenuation: 0
-    Light Flare:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.49804
-                    G:  0.49804
-                    R:  0.49804
-                Color Map: LightFlare
-                Use Texture: true
     Joker Background:
         Shader: Textured Shader
         Uniforms:
@@ -144,6 +143,17 @@ Materials:
                     G:  0.5
                     R:  0.5
                 Color Map: joker_background
+                Use Texture: true
+    Light Flare:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: LightFlare
                 Use Texture: true
     Material Letter 5:
         Shader: Textured Shader
@@ -303,23 +313,26 @@ Root:
                     Render Height (px): 720
                     Render Width (px): 1280
                     Trace:
-                        Aperture Size: 0
-                        Caustics: true
-                        Difference Threshold: 0.02
-                        Diffuse Reflection: true
+                        Beer's Law: false
                         Enable BVH Acceleration: true
-                        Focus Distance: 1
+                        Fresnel Term: false
                         Maximum Recursion Depth: 5
-                        Maximum Samples: 2
-                        Minimum Samples: 0
-                        Monte Carlo: 0
-                        Random Single Branching: true
                         Reflections: true
                         Refractions: true
-                        Sample Count Type: 0
-                        Samples Per Pixel: 0
+                        Sample Settings:
+                            Aperture Size: 0
+                            Caustics: true
+                            Difference Threshold: 0.02
+                            Diffuse Reflection: true
+                            Focus Distance: 1
+                            Maximum Samples: 2
+                            Minimum Samples: 0
+                            Monte Carlo: 0
+                            Random Single Branching: true
+                            Sample Count Type: 0
+                            Samples Per Pixel: 0
+                            Std. Error Threshold: 0.02
                         Shadows: 2
-                        Std. Error Threshold: 0.02
                     Trace Debugger:
                         Show Diffuse Reflection Rays: true
                         Show Reflection Rays: true
@@ -331,22 +344,26 @@ Root:
                         X:
                             Interpolation: CatmullRom
                             Wrap: false
-                            FrameTimes: [1.2333, 1.1333, 0, 1.3, 1.4, 2.2667, 2.3667, 2, 1.0667, 3, 3.1667, 3.2, 3.4333, 2.1333, 2.2, 3.3333]
-                            FrameValues: [0.98602, -1.9552, 0, -1.1301, -0.02862, 1.0111, 0.027867, -0.020083, 1.9191, -0.00037633, -2.0621, 1.0164, -0.056863, 1.9852, -0.98355, -1.0736]
-                        Y:  0
+                            FrameTimes: [1.2333, 1.1333, 1, 1.3, 1.4, 2.3667, 2.2667, 2, 1.0667, 2.5, 3, 3.1, 2.1333, 2.1667, 3.1667, 3.3, 3.4]
+                            FrameValues: [0.98602, -1.9552, 0, -1.1301, -0.02862, 0.82538, -0.0057791, -0.020083, 1.9191, -0.0050303, 0.0066301, 1.0602, -1.3403, 1.923, -0.56189, 0.836, -0.0059756]
+                        Y:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [3, 3.2667, 3.1333, 3.4]
+                            FrameValues: [-1.4901e-08, -0.5262, 0.70698, 0.79319]
                         Z:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [1, 1.1333, 1.2, 1.3667, 2, 2.1333, 2.2667, 2.3333, 2.9667, 3.1, 3.1667, 3.3]
-                            FrameValues: [0.0019288, 0.97535, -1.0135, 0, 0.018768, -0.99471, 0.95717, 0.018768, -0.018768, -1.0698, 0.95717, 1.8626e-09]
+                            FrameTimes: [1, 1.3667, 2, 2.1333, 2.2667, 2.3333, 2.9667, 3.1, 3.3, 1.1, 1.2, 3.3667]
+                            FrameValues: [-0.104, 0, 0.018768, -0.99471, 0.95717, 0.018768, -0.018768, -1.0698, 0.89946, 0.93701, -1.0135, 1.8626e-09]
                     Scale:
                         X:  0.54175
                         Y:  1
                         Z:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [2.0667, 2.1667, 1.2333, 1.1667, 2.2333, 1.1333, 3, 3.2333, 3.1333, 3.1]
-                            FrameValues: [0.95075, 1.0503, 1, 0.94737, 0.99989, 1.0475, 0.99758, 0.99989, 0.94894, 1.0509]
+                            FrameTimes: [2.0667, 1.2333, 1.1667, 2.2333, 1.1333, 3]
+                            FrameValues: [0.95075, 1, 0.94737, 0.99989, 1.0475, 0.99758]
                     Translation:
                         X:  0
                         Y:  0
@@ -528,11 +545,7 @@ Root:
                             Wrap: false
                             FrameTimes: [8.4, 8, 8.8667]
                             FrameValues: [-0.97934, -0.022367, 4.0356]
-                        Z:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [2, 3]
-                            FrameValues: [10.323, 0.3]
+                        Z:  10.323
             Children:
                 []
         -   Name: Particle System 1
@@ -542,6 +555,7 @@ Root:
                     Material: ""
                     Subdivisions: 0
                 ParticleSystem:
+                    Billboard: false
                     Constant Force:
                         X:  0
                         Y:  -9.8
