@@ -508,11 +508,7 @@ Root:
                             FrameTimes: [5, 6.8667]
                             FrameValues: [0, 9.966]
                         Y:  0
-                        Z:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [1, 2]
-                            FrameValues: [9.8886, 0.2]
+                        Z:  9.8886
             Children:
                 []
         -   Name: Plane 5
@@ -545,7 +541,11 @@ Root:
                             Wrap: false
                             FrameTimes: [8.4, 8, 8.8667]
                             FrameValues: [-0.97934, -0.022367, 4.0356]
-                        Z:  10.323
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.7, 3]
+                            FrameValues: [20.592, 0.51277]
             Children:
                 []
         -   Name: Particle System 1

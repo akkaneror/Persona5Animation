@@ -1,5 +1,5 @@
 Name: scene_2
-Animation Length: 10
+Animation Length: 12
 Animation FPS: 30
 Textures:
     Alpha Test Texture:
@@ -8,6 +8,9 @@ Textures:
     Checkers Texture:
         Bilinear: true
         Path: assets/checkers.png
+    b010_900_02:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/b010_900_02.png
     blue_flare:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/blue_flare.png
@@ -29,6 +32,9 @@ Textures:
     red_flare:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/red_flare.png
+    sumire_chatbox:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/sumire_chatbox.png
     white_tiles:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/white_tiles.png
@@ -125,6 +131,17 @@ Materials:
                     R:  0
                 Color Map: ""
                 Use Texture: false
+    Blue Flare:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: blue_flare
+                Use Texture: true
     Creeper Body:
         Shader: Textured Shader
         Uniforms:
@@ -167,6 +184,17 @@ Materials:
             ConstantAttenuation: 1
             LinearAttenuation: 0
             QuadraticAttenuation: 0
+    Hair:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  1
+                Color Map: ""
+                Use Texture: false
     Joker Mask:
         Shader: Textured Shader
         Uniforms:
@@ -189,7 +217,7 @@ Materials:
                     R:  0.5
                 Color Map: magic_circle_2
                 Use Texture: true
-    Red Flare:
+    Sumire:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -198,52 +226,19 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: red_flare
+                Color Map: b010_900_02
                 Use Texture: true
-    Blue Flare:
+    Sumire Chatbox:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
                 Color:
                     A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: blue_flare
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: sumire_chatbox
                 Use Texture: true
-    Yellow Flare:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: yellow_flare
-                Use Texture: true
-    Skin:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.70196
-                    G:  0.87059
-                    R:  0.99216
-                Color Map: ""
-                Use Texture: false
-    Hair:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0
-                    G:  0
-                    R:  1
-                Color Map: ""
-                Use Texture: false
     Material Black:
         Shader: Blinn-Phong Shader
         Uniforms:
@@ -329,6 +324,28 @@ Materials:
                     R:  0.5
                 Color Map: pillars
                 Use Texture: true
+    Red Flare:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: red_flare
+                Use Texture: true
+    Skin:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.70196
+                    G:  0.87059
+                    R:  0.99216
+                Color Map: ""
+                Use Texture: false
     Textured Material:
         Shader: Textured Shader
         Uniforms:
@@ -377,6 +394,17 @@ Materials:
                     R:  0
                 Color Map: ""
                 Use Texture: false
+    White Dwarf:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  1
+                    G:  1
+                    R:  1
+                Color Map: ""
+                Use Texture: false
     White Tile:
         Shader: Textured Shader
         Uniforms:
@@ -387,6 +415,17 @@ Materials:
                     G:  0.5
                     R:  0.5
                 Color Map: white_tiles
+                Use Texture: true
+    Yellow Flare:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: yellow_flare
                 Use Texture: true
 ShaderPrograms:
     Alpha Test Shader:
@@ -482,13 +521,29 @@ Root:
                         Show Surface Normals: true
                 Transform:
                     Rotation:
-                        X:  -35
-                        Y:  30
-                        Z:  19
+                        X:
+                            Interpolation: BSpline
+                            Wrap: false
+                            FrameTimes: [6.5, 6.8, 6.9, 7.0667, 7.2333, 7.5, 7.7667, 7.9, 8.6667, 8.0667]
+                            FrameValues: [-35, -33.976, -36.195, -31.146, -38.086, -29.681, -36.488, -32.426, -35.057, -34.688]
+                        Y:
+                            Interpolation: BSpline
+                            Wrap: false
+                            FrameTimes: [6.4667, 6.6333, 7.1333, 7.6, 8.1, 7.7667, 8.2667, 8.8333, 7.4]
+                            FrameValues: [30, 27.739, 25.017, 25.299, 26.901, 37.591, 34.631, 30.256, 38.063]
+                        Z:
+                            Interpolation: BSpline
+                            Wrap: false
+                            FrameTimes: [6.4667, 8.4333, 7.9333, 7.3]
+                            FrameValues: [19, 19, 15.276, 23.256]
                     Scale:
                         X:  1
                         Y:  1
-                        Z:  1
+                        Z:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [6.4667, 6.9667, 7.5667, 7.9333, 7.2333]
+                            FrameValues: [1, 0.95679, 1.0476, 1, 1.0221]
                     Translation:
                         X:
                             Interpolation: Linear
@@ -573,7 +628,7 @@ Root:
             Enabled: true
             Components:
                 Plane:
-                    Material: White Tile
+                    Material: Material Black
                     Subdivisions: 0
                 Transform:
                     Rotation:
@@ -585,9 +640,9 @@ Root:
                         Y:  20
                         Z:  1
                     Translation:
-                        X:  0.024534
-                        Y:  -1.4603e-05
-                        Z:  -0.026259
+                        X:  0
+                        Y:  0
+                        Z:  0
             Children:
                 []
         -   Name: Thieve
@@ -799,8 +854,12 @@ Root:
                                                         Transform:
                                                             Rotation:
                                                                 X:  0
-                                                                Y:  16
-                                                                Z:  -44
+                                                                Y:
+                                                                    Interpolation: Linear
+                                                                    Wrap: false
+                                                                    FrameTimes: [2, 4]
+                                                                    FrameValues: [0, -92.286]
+                                                                Z:  0
                                                             Scale:
                                                                 X:  1
                                                                 Y:  1
@@ -1110,8 +1169,8 @@ Root:
                                                                 Z:
                                                                     Interpolation: Linear
                                                                     Wrap: false
-                                                                    FrameTimes: [3.0333, 3.3667]
-                                                                    FrameValues: [177.54, 161.56]
+                                                                    FrameTimes: [3.0333, 3.3333]
+                                                                    FrameValues: [177.54, 249.49]
                                                             Scale:
                                                                 X:  1
                                                                 Y:  1
@@ -1469,8 +1528,16 @@ Root:
                         Z:  1.5
                     Translation:
                         X:  -1
-                        Y:  2
-                        Z:  -3
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [9.5, 8.9667]
+                            FrameValues: [1.0038, 2.0984]
+                        Z:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [9.0333, 9.5333]
+                            FrameValues: [-3, -4.6237]
             Children:
                 -   Name: Torso
                     Enabled: true
@@ -1794,73 +1861,63 @@ Root:
                                 Y:  -0
                                 Z:  0
                     Children:
-                        -   Name: Left Leg Geo
+                        -   Name: Empty Node 1
                             Enabled: true
                             Components:
-                                TriangleMesh:
-                                    LoopSubdivision: 0
-                                    Material: Creeper Body
-                                    Mesh: Cube
                                 Transform:
                                     Rotation:
-                                        X:  0
+                                        X:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [8.9, 9.8667]
+                                            FrameValues: [0, -89.992]
                                         Y:  0
-                                        Z:  0
+                                        Z:  -0.20845
                                     Scale:
-                                        X:  0.25
+                                        X:  1
                                         Y:  1
-                                        Z:  0.3
+                                        Z:  1
                                     Translation:
-                                        X:  -0.1
-                                        Y:  -0.8
+                                        X:  0
+                                        Y:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [8.8667, 9.1667]
+                                            FrameValues: [0.038048, -0.1951]
                                         Z:  0
                             Children:
-                                []
-                -   Name: Right Leg
-                    Enabled: true
-                    Components:
-                        Transform:
-                            Rotation:
-                                X:  20
-                                Y:  0
-                                Z:  0
-                            Scale:
-                                X:  1
-                                Y:  1
-                                Z:  1
-                            Translation:
-                                X:  0
-                                Y:  0
-                                Z:  0
-                    Children:
-                        -   Name: Right Leg Geo
-                            Enabled: true
-                            Components:
-                                TriangleMesh:
-                                    LoopSubdivision: 0
-                                    Material: Creeper Body
-                                    Mesh: Cube
-                                Transform:
-                                    Rotation:
-                                        X:  0
-                                        Y:  0
-                                        Z:  0
-                                    Scale:
-                                        X:  0.25
-                                        Y:  1
-                                        Z:  0.3
-                                    Translation:
-                                        X:  0.1
-                                        Y:  -0.8
-                                        Z:  0
-                            Children:
-                                []
+                                -   Name: Left Leg Geo
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Creeper Body
+                                            Mesh: Cube
+                                        Transform:
+                                            Rotation:
+                                                X:  -2.1344e-07
+                                                Y:  0
+                                                Z:  0
+                                            Scale:
+                                                X:  0.25
+                                                Y:  1
+                                                Z:  0.3
+                                            Translation:
+                                                X:  -0.1
+                                                Y:  -0.8
+                                                Z:  1.1921e-07
+                                    Children:
+                                        []
                 -   Name: Head
                     Enabled: true
                     Components:
                         Transform:
                             Rotation:
-                                X:  0
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [9.6333, 10]
+                                    FrameValues: [0, 30.427]
                                 Y:  0
                                 Z:  0
                             Scale:
@@ -1915,6 +1972,70 @@ Root:
                                         Z:  0.3
                             Children:
                                 []
+                -   Name: Left Leg 2
+                    Enabled: true
+                    Components:
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  -0
+                                Z:  0
+                    Children:
+                        -   Name: Empty Node 1
+                            Enabled: true
+                            Components:
+                                Transform:
+                                    Rotation:
+                                        X:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [8.9, 9.8667]
+                                            FrameValues: [0, -89.992]
+                                        Y:  0
+                                        Z:  -0.20845
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0.5
+                                        Y:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [8.8667, 9.1667]
+                                            FrameValues: [0.038048, -0.1951]
+                                        Z:  0
+                            Children:
+                                -   Name: Left Leg Geo
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Creeper Body
+                                            Mesh: Cube
+                                        Transform:
+                                            Rotation:
+                                                X:  -2.1344e-07
+                                                Y:  0
+                                                Z:  0
+                                            Scale:
+                                                X:  0.25
+                                                Y:  1
+                                                Z:  0.3
+                                            Translation:
+                                                X:  -0.1
+                                                Y:  -0.8
+                                                Z:  1.1921e-07
+                                    Children:
+                                        []
         -   Name: Magic Circle 1
             Enabled: true
             Components:
@@ -1929,14 +2050,18 @@ Root:
                             Interpolation: Linear
                             Wrap: false
                             FrameTimes: [5, 8.2333]
-                            FrameValues: [0, 303.8]
+                            FrameValues: [0, 418.98]
                     Scale:
                         X:
                             Interpolation: Linear
                             Wrap: false
                             FrameTimes: [4, 5.1333]
                             FrameValues: [0, 10.033]
-                        Y:  0
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [4, 5]
+                            FrameValues: [-0.055307, 10]
                         Z:  1
                     Translation:
                         X:  -1
@@ -1963,8 +2088,8 @@ Root:
                         X:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [4.5, 5.5333]
-                            FrameValues: [0.12979, 10.163]
+                            FrameTimes: [4.2, 5.5333]
+                            FrameValues: [0.16914, 10.163]
                         Y:
                             Interpolation: Linear
                             Wrap: false
@@ -1973,11 +2098,15 @@ Root:
                         Z:  1
                     Translation:
                         X:  -1
-                        Y:  3.2
+                        Y:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [7.3333, 7.7667, 9.0333, 8.6]
+                            FrameValues: [3.2, 6.016, 35.104, 19.35]
                         Z:  -3
             Children:
                 []
-        -   Name: Plane 1
+        -   Name: Red Flare
             Enabled: true
             Components:
                 Plane:
@@ -1997,8 +2126,112 @@ Root:
                         Y:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [4.9667, 6.5667]
-                            FrameValues: [7.7545, -0.53504]
+                            FrameTimes: [4.9667, 6, 6.1667]
+                            FrameValues: [7.7545, -0.18595, -8.543]
                         Z:  -2
+            Children:
+                []
+        -   Name: Morning Star
+            Enabled: true
+            Components:
+                Sphere:
+                    Material: White Dwarf
+                    Quality: 5
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [6.1667, 7.2333, 9, 8]
+                            FrameValues: [0, 2.6517, 30.964, 10.493]
+                        Y:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [6.1667, 8, 9, 7.3]
+                            FrameValues: [0, 9.7551, 28.739, 2.7458]
+                        Z:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [6.1667, 8, 7.2667, 9]
+                            FrameValues: [0, 8.2982, 2.9961, 30.466]
+                    Translation:
+                        X:  -1
+                        Y:  0
+                        Z:  -3
+            Children:
+                []
+        -   Name: Plane 2
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Material Black
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  90
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  20
+                        Y:  18
+                        Z:  1
+                    Translation:
+                        X:  -1
+                        Y:  -1.9
+                        Z:  -2
+            Children:
+                []
+        -   Name: Sumire
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Sumire
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  -35
+                        Y:  30
+                        Z:  19
+                    Scale:
+                        X:  1.25
+                        Y:  1.25
+                        Z:  1.25
+                    Translation:
+                        X:  1
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.33333, 1, 2.7333, 2.9667]
+                            FrameValues: [-0.16674, 2.2, 2.2, -0.27944]
+                        Z:  4
+            Children:
+                []
+        -   Name: Sumire Chatbox
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Sumire Chatbox
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  -35
+                        Y:  30
+                        Z:  19
+                    Scale:
+                        X:  3
+                        Y:  1
+                        Z:  2
+                    Translation:
+                        X:  2.5
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.53333, 1.1, 2.6333, 3]
+                            FrameValues: [-2.17, 2.2254, 2.2254, -0.045909]
+                        Z:  3.1
             Children:
                 []
