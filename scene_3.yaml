@@ -8,6 +8,12 @@ Textures:
     Checkers Texture:
         Bilinear: true
         Path: assets/checkers.png
+    creeper_body:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/creeper_body.png
+    creeper_face:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/creeper_face.jpg
     white_tiles:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/white_tiles.png
@@ -121,6 +127,28 @@ Materials:
             ConstantAttenuation: 1
             LinearAttenuation: 0
             QuadraticAttenuation: 0
+    Creeper Body:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: creeper_body
+                Use Texture: true
+    Creeper Head:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: creeper_face
+                Use Texture: true
     Textured Material:
         Shader: Textured Shader
         Uniforms:
@@ -274,17 +302,17 @@ Root:
                         Show Surface Normals: true
                 Transform:
                     Rotation:
-                        X:  -6
-                        Y:  1
-                        Z:  4
+                        X:  0
+                        Y:  60
+                        Z:  0
                     Scale:
                         X:  1
                         Y:  1
                         Z:  1
                     Translation:
-                        X:  0
+                        X:  5
                         Y:  1
-                        Z:  5
+                        Z:  3
             Children:
                 []
         -   Name: Key Light
@@ -378,16 +406,16 @@ Root:
                 Transform:
                     Rotation:
                         X:  0
-                        Y:  0
+                        Y:  -180
                         Z:  0
                     Scale:
-                        X:  0.3
-                        Y:  0.3
-                        Z:  0.3
+                        X:  0.5
+                        Y:  0.5
+                        Z:  0.5
                     Translation:
                         X:  0
                         Y:  0
-                        Z:  0
+                        Z:  2
             Children:
                 -   Name: Foot 1
                     Enabled: true
@@ -1048,14 +1076,11 @@ Root:
                                         Z:  0
                             Children:
                                 []
-        -   Name: Frame
+        -   Name: Creeper
             Enabled: true
             Components:
                 CustomProp:
                     Angle: 0
-                    Khoa's Prop: 0
-                    Quan's Mine: 0
-                    Quan's Walk: 0
                 Transform:
                     Rotation:
                         X:  0
@@ -1067,15 +1092,15 @@ Root:
                         Z:  1
                     Translation:
                         X:  0
-                        Y:  0
-                        Z:  0
+                        Y:  1
+                        Z:  -2
             Children:
                 -   Name: Torso
                     Enabled: true
                     Components:
                         TriangleMesh:
                             LoopSubdivision: 0
-                            Material: Creeper body
+                            Material: Creeper Body
                             Mesh: Cube
                         Transform:
                             Rotation:
@@ -1114,7 +1139,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper body
+                                    Material: Creeper Body
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1153,7 +1178,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Pickaxe base color
+                                            Material: Blinn-Phong Material
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1175,7 +1200,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Pickaxe color
+                                            Material: Blinn-Phong Material
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1197,7 +1222,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Pickaxe color
+                                            Material: Blinn-Phong Material
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1258,7 +1283,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Pickaxe base color
+                                            Material: Default Material
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1280,7 +1305,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Pickaxe color
+                                            Material: Default Material
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1302,7 +1327,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Pickaxe color
+                                            Material: Default Material
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1341,7 +1366,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper body
+                                    Material: Creeper Body
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1363,7 +1388,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: "Torch "
+                                    Material: Default Material
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1402,7 +1427,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper body
+                                    Material: Creeper Body
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1441,7 +1466,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper body
+                                    Material: Creeper Body
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1480,7 +1505,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper body
+                                    Material: Creeper Body
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1501,7 +1526,7 @@ Root:
                             Enabled: true
                             Components:
                                 Plane:
-                                    Material: Creeper face
+                                    Material: Creeper Head
                                     Subdivisions: 0
                                 Transform:
                                     Rotation:
@@ -1515,7 +1540,27 @@ Root:
                                     Translation:
                                         X:  0
                                         Y:  0.63
-                                        Z:  0.25
+                                        Z:  0.3
                             Children:
                                 []
-
+        -   Name: Sphere 1
+            Enabled: true
+            Components:
+                Sphere:
+                    Material: Blinn-Phong Material
+                    Quality: 4
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+            Children:
+                []
