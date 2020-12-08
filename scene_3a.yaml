@@ -26,6 +26,9 @@ Textures:
     break_formation_button:
         Bilinear: true
         Path: ../../../../../P5/Persona5Animation/assets/break_formation_button.png
+    cape:
+        Bilinear: true
+        Path: ../../../../../P5/Persona5Animation/assets/cape.png
     creeper_body:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/creeper_body.png
@@ -192,6 +195,17 @@ Materials:
                     G:  0.5
                     R:  0.5
                 Color Map: break_formation_button
+                Use Texture: true
+    Cape texture:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: cape
                 Use Texture: true
     Chatbox texture:
         Shader: Textured Shader
@@ -1399,7 +1413,7 @@ Root:
                                             Enabled: true
                                             Components:
                                                 Plane:
-                                                    Material: Material Black
+                                                    Material: Cape texture
                                                     Subdivisions: 0
                                                 Transform:
                                                     Rotation:
@@ -1407,7 +1421,7 @@ Root:
                                                         Y:  0
                                                         Z:  0
                                                     Scale:
-                                                        X:  1.2
+                                                        X:  2.2
                                                         Y:  3
                                                         Z:  1
                                                     Translation:
@@ -2233,8 +2247,12 @@ Root:
                             Interpolation: Linear
                             Wrap: false
                             FrameTimes: [1.8333, 2.2667]
-                            FrameValues: [0.014086, 0.98926]
-                        Y:  1.014
+                            FrameValues: [0.0024961, 0.98926]
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1.8333, 2.2667]
+                            FrameValues: [0, 1.0014]
                         Z:
                             Interpolation: Linear
                             Wrap: false
