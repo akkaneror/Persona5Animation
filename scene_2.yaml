@@ -885,9 +885,13 @@ Root:
                                                                 Y:
                                                                     Interpolation: Linear
                                                                     Wrap: false
-                                                                    FrameTimes: [2, 4]
-                                                                    FrameValues: [0, -92.286]
-                                                                Z:  0
+                                                                    FrameTimes: [2, 4, 9, 9.8]
+                                                                    FrameValues: [2.6904, -92.286, -92.286, 0.40535]
+                                                                Z:
+                                                                    Interpolation: Linear
+                                                                    Wrap: false
+                                                                    FrameTimes: [9, 9.9667]
+                                                                    FrameValues: [0, -69.275]
                                                             Scale:
                                                                 X:  1
                                                                 Y:  1
@@ -2138,8 +2142,8 @@ Root:
                         Z:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [5, 8.2333, 12]
-                            FrameValues: [0, 418.98, 418.98]
+                            FrameTimes: [5, 8.2333, 11.9]
+                            FrameValues: [0, 418.98, 899.06]
                     Scale:
                         X:
                             Interpolation: Linear
@@ -2253,27 +2257,6 @@ Root:
                         Z:  -3
             Children:
                 []
-        -   Name: Plane 2
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Material Black
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  90
-                        Y:  0
-                        Z:  0
-                    Scale:
-                        X:  20
-                        Y:  18
-                        Z:  1
-                    Translation:
-                        X:  -1
-                        Y:  -1.9
-                        Z:  -2
-            Children:
-                []
         -   Name: Sumire
             Enabled: true
             Components:
@@ -2286,16 +2269,16 @@ Root:
                         Y:  30
                         Z:  19
                     Scale:
-                        X:  1.25
-                        Y:  1.25
+                        X:  1.5
+                        Y:  1.5
                         Z:  1.25
                     Translation:
                         X:  1
                         Y:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [0.33333, 1, 2.7333, 2.9667]
-                            FrameValues: [-0.16674, 2.2, 2.2, -0.27944]
+                            FrameTimes: [0.33333, 0.96667, 2.7, 2.9667]
+                            FrameValues: [-0.16674, 2.3776, 2.3776, -0.27944]
                         Z:  4
             Children:
                 []
@@ -2307,7 +2290,11 @@ Root:
                     Subdivisions: 0
                 Transform:
                     Rotation:
-                        X:  -35
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1, 1.3333, 1.5333, 1.8, 2.0667]
+                            FrameValues: [-35, -33.047, -36.864, -33.047, -35.044]
                         Y:  30
                         Z:  19
                     Scale:
@@ -2416,7 +2403,7 @@ Root:
                     Subdivisions: 0
                 Transform:
                     Rotation:
-                        X:  0
+                        X:  180
                         Y:  90
                         Z:  -1.7489e-06
                     Scale:
@@ -2425,7 +2412,7 @@ Root:
                         Z:  20.016
                     Translation:
                         X:  -29
-                        Y:  4
+                        Y:  3.5
                         Z:  -11
             Children:
                 []
@@ -2437,7 +2424,7 @@ Root:
                     Subdivisions: 0
                 Transform:
                     Rotation:
-                        X:  0
+                        X:  -180
                         Y:  90
                         Z:  -1.7489e-06
                     Scale:
@@ -2446,7 +2433,7 @@ Root:
                         Z:  20.016
                     Translation:
                         X:  -29
-                        Y:  4
+                        Y:  3.5
                         Z:  -6
             Children:
                 []
