@@ -32,6 +32,12 @@ Textures:
     screencrack:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/AOA/screencrack.png
+    smoke1:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/AOA/smoke1.png
+    smoke2:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/AOA/smoke2.png
     sumire:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/AOA/sumire.png
@@ -145,38 +151,16 @@ Materials:
             ConstantAttenuation: 1
             LinearAttenuation: 0
             QuadraticAttenuation: 0
-    Material Red:
+    Haru Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
                 Color:
                     A:  1
-                    B:  0
-                    G:  0
-                    R:  1
-                Color Map: ""
-                Use Texture: false
-    Material Black:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.070588
-                    G:  0.070588
-                    R:  0.070588
-                Color Map: ""
-                Use Texture: false
-    ScreenCrack:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.49804
-                    G:  0.49804
-                    R:  0.49804
-                Color Map: screencrack
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: haru
                 Use Texture: true
     Joker Splash:
         Shader: Textured Shader
@@ -189,7 +173,7 @@ Materials:
                     R:  0.5
                 Color Map: joker
                 Use Texture: true
-    Sumire Splash:
+    Smoke1:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -198,8 +182,41 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: sumire
+                Color Map: smoke1
                 Use Texture: true
+    Smoke2:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: smoke2
+                Use Texture: true
+    Material Black:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.070588
+                    G:  0.070588
+                    R:  0.070588
+                Color Map: ""
+                Use Texture: false
+    Material Red:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  1
+                Color Map: ""
+                Use Texture: false
     Morgana Splash:
         Shader: Textured Shader
         Uniforms:
@@ -211,7 +228,18 @@ Materials:
                     R:  0.5
                 Color Map: morgana
                 Use Texture: true
-    Haru Splash:
+    ScreenCrack:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: screencrack
+                Use Texture: true
+    Sumire Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -220,7 +248,7 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: haru
+                Color Map: sumire
                 Use Texture: true
     Textured Material:
         Shader: Textured Shader
@@ -365,12 +393,24 @@ Root:
                 Transform:
                     Rotation:
                         X:  0
-                        Y:  0
-                        Z:  0
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.5, 0.6, 0.63333, 0.56667, 0.53333]
+                            FrameValues: [0, 2.3472, 0.1231, -1.938, 3.7914]
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.5, 0.56667, 0.6, 0.83333, 0.53333]
+                            FrameValues: [-0.030556, -1.4792, 0.024598, 0, 2.631]
                     Scale:
                         X:  1
                         Y:  1
-                        Z:  1
+                        Z:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [0.5, 0.63333, 0.53333, 0.56667, 0.6, 1.6667, 1.7333, 1.8333, 1.8667, 2.4, 2.9667]
+                            FrameValues: [1.0023, 0.99563, 0.92808, 1.0483, 0.92888, 0.99563, 1.0466, 1.0636, 0.99362, 0.99362, 1.1626]
                     Translation:
                         X:  1
                         Y:  2.7
@@ -669,7 +709,11 @@ Root:
                         Transform:
                             Rotation:
                                 X:  0
-                                Y:  0
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.7667, 1.9667, 2.3, 2.5, 2.2]
+                                    FrameValues: [0, -3.3981, -3.7747, -0.83707, 4.4507]
                                 Z:  -3
                             Scale:
                                 X:  2.1
@@ -678,7 +722,11 @@ Root:
                             Translation:
                                 X:  3.1
                                 Y:  2.9
-                                Z:  0.2
+                                Z:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [1.2, 2, 1.6667]
+                                    FrameValues: [-2.3349, 0.21866, 0.014925]
                     Children:
                         []
                 -   Name: sumire
@@ -690,7 +738,11 @@ Root:
                         Transform:
                             Rotation:
                                 X:  0
-                                Y:  0
+                                Y:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [1.6, 1.7333, 1.8333, 2, 2.1667, 2.5, 2.7]
+                                    FrameValues: [0, 5.8874, -3.7826, 8.2854, -9.1094, 12.715, 0.10223]
                                 Z:  0
                             Scale:
                                 X:  2.1
@@ -698,8 +750,12 @@ Root:
                                 Z:  1
                             Translation:
                                 X:  -1.1
-                                Y:  3.3
-                                Z:  0
+                                Y:  3.2
+                                Z:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [1.5667, 2.0333, 1.2]
+                                    FrameValues: [-0.0045443, 0.20328, -2.8113]
                     Children:
                         []
                 -   Name: haru
@@ -710,7 +766,11 @@ Root:
                             Subdivisions: 0
                         Transform:
                             Rotation:
-                                X:  0
+                                X:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [1.6, 1.8, 1.9667, 2.1667, 2.5333, 2.4667]
+                                    FrameValues: [0.92162, -7.6034, 10.549, -9.1078, 0.60085, 14.621]
                                 Y:  0
                                 Z:  0
                             Scale:
@@ -720,7 +780,11 @@ Root:
                             Translation:
                                 X:  0.5
                                 Y:  1.7
-                                Z:  0.2
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.2, 2.0333, 1.7]
+                                    FrameValues: [-2.1516, 0.20463, 0.03241]
                     Children:
                         []
                 -   Name: morgana
@@ -731,7 +795,11 @@ Root:
                             Subdivisions: 0
                         Transform:
                             Rotation:
-                                X:  0
+                                X:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [1.7, 1.9667, 2.1, 2.4, 2.5333, 2.7333]
+                                    FrameValues: [0, -7.373, 7.007, -7.9964, 10.043, 0.2304]
                                 Y:  0
                                 Z:  0
                             Scale:
@@ -741,6 +809,132 @@ Root:
                             Translation:
                                 X:  1
                                 Y:  3.5
-                                Z:  0.2
+                                Z:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [1.2, 2.0667, 1.7333]
+                                    FrameValues: [-2.0293, 0.24813, 0.0035636]
+                    Children:
+                        []
+        -   Name: Empty Node 1
+            Enabled: true
+            Components:
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+            Children:
+                -   Name: Plane 1
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Blinn-Phong Material
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 2
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Blinn-Phong Material
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 3
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Blinn-Phong Material
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 4
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Blinn-Phong Material
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 5
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Blinn-Phong Material
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
                     Children:
                         []
