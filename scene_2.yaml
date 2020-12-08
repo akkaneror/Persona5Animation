@@ -2,6 +2,9 @@ Name: scene_2
 Animation Length: 12
 Animation FPS: 30
 Textures:
+    1314204:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/1314204.jpg
     Alpha Test Texture:
         Bilinear: true
         Path: assets/alpha_test.png
@@ -23,6 +26,9 @@ Textures:
     joker_mask:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/joker_mask.png
+    knockdown:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/knockdown.png
     magic_circle_2:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/magic_circle_2.png
@@ -217,7 +223,7 @@ Materials:
                     R:  0.5
                 Color Map: magic_circle_2
                 Use Texture: true
-    Sumire:
+    Galaxy:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -226,18 +232,18 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: b010_900_02
+                Color Map: 1314204
                 Use Texture: true
-    Sumire Chatbox:
+    KnockDown:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
                 Color:
                     A:  1
-                    B:  0.49804
-                    G:  0.49804
-                    R:  0.49804
-                Color Map: sumire_chatbox
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: knockdown
                 Use Texture: true
     Material Black:
         Shader: Blinn-Phong Shader
@@ -346,6 +352,28 @@ Materials:
                     R:  0.99216
                 Color Map: ""
                 Use Texture: false
+    Sumire:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: b010_900_02
+                Use Texture: true
+    Sumire Chatbox:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: sumire_chatbox
+                Use Texture: true
     Textured Material:
         Shader: Textured Shader
         Uniforms:
@@ -504,10 +532,10 @@ Root:
                             Caustics: true
                             Difference Threshold: 0.02
                             Diffuse Reflection: true
-                            Focus Distance: 1
+                            Focus Distance: -6
                             Maximum Samples: 2
                             Minimum Samples: 0
-                            Monte Carlo: 0
+                            Monte Carlo: 1
                             Random Single Branching: true
                             Sample Count Type: 0
                             Samples Per Pixel: 0
@@ -524,13 +552,13 @@ Root:
                         X:
                             Interpolation: BSpline
                             Wrap: false
-                            FrameTimes: [6.5, 6.8, 6.9, 7.0667, 7.2333, 7.5, 7.7667, 7.9, 8.6667, 8.0667]
-                            FrameValues: [-35, -33.976, -36.195, -31.146, -38.086, -29.681, -36.488, -32.426, -35.057, -34.688]
+                            FrameTimes: [6.5, 6.8, 6.9, 7.0667, 7.3, 7.4667, 7.7333, 7.9, 8.6667, 8.0667]
+                            FrameValues: [-35, -33.976, -36.195, -31.146, -37.051, -31.52, -36.028, -32.426, -35.057, -34.688]
                         Y:
                             Interpolation: BSpline
                             Wrap: false
-                            FrameTimes: [6.4667, 6.6333, 7.1333, 7.6, 8.1, 7.7667, 8.2667, 8.8333, 7.4]
-                            FrameValues: [30, 27.739, 25.017, 25.299, 26.901, 37.591, 34.631, 30.256, 38.063]
+                            FrameTimes: [6.4667, 6.6333, 7.1333, 7.6, 7.9667, 7.7667, 8.2667, 8.8333, 7.3667]
+                            FrameValues: [30, 27.739, 26.954, 25.299, 26.279, 35.726, 34.631, 30.256, 34.541]
                         Z:
                             Interpolation: BSpline
                             Wrap: false
@@ -628,7 +656,7 @@ Root:
             Enabled: true
             Components:
                 Plane:
-                    Material: Material Black
+                    Material: Galaxy
                     Subdivisions: 0
                 Transform:
                     Rotation:
@@ -1970,6 +1998,31 @@ Root:
                                         X:  0
                                         Y:  0.63
                                         Z:  0.3
+                            Children:
+                                []
+                        -   Name: Knockdown
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: KnockDown
+                                    Subdivisions: 3
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [9.5333, 12]
+                                            FrameValues: [-0.2072, 2560.6]
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  0.2
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  1
+                                        Z:  0
                             Children:
                                 []
                 -   Name: Left Leg 2
