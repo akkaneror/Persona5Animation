@@ -508,7 +508,11 @@ Root:
                             FrameTimes: [5, 6.8667]
                             FrameValues: [0, 9.966]
                         Y:  0
-                        Z:  9.8886
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.1, 2]
+                            FrameValues: [9.8886, 0.16897]
             Children:
                 []
         -   Name: Plane 5
