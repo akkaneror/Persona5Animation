@@ -310,21 +310,13 @@ Root:
                         Y:  1
                         Z:  1
                     Translation:
-                        X:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [0.76667, 3.4]
-                            FrameValues: [4, 4.9311]
-                        Y:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [0.76667, 3.3667]
-                            FrameValues: [5, 6.1075]
+                        X:  3.6396
+                        Y:  5
                         Z:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [0.76667, 3.3667]
-                            FrameValues: [6, 7.0685]
+                            FrameTimes: [0.76667, 3.0333]
+                            FrameValues: [6, 8.1483]
             Children:
                 []
         -   Name: Key Light
@@ -420,8 +412,8 @@ Root:
                         X:
                             Interpolation: CatmullRom
                             Wrap: false
-                            FrameTimes: [1, 1.5667, 2.7667]
-                            FrameValues: [180.27, 338.37, 538.91]
+                            FrameTimes: [1, 1.4333, 2.2, 3.2667]
+                            FrameValues: [180.27, 343.97, 494.08, 536.11]
                         Y:  1e-05
                         Z:  180
                     Scale:
@@ -431,15 +423,15 @@ Root:
                     Translation:
                         X:  0
                         Y:
-                            Interpolation: CatmullRom
+                            Interpolation: BSpline
                             Wrap: false
-                            FrameTimes: [0.98333, 1.4, 2.3667, 2.8667]
-                            FrameValues: [-8.9407e-08, 3.0955, 1.2911, 0.16422]
+                            FrameTimes: [1.3, 2.2, 2.7333, 1.0667, 3.3667, 0.9]
+                            FrameValues: [4.9836, 1.0011, 0.42221, 2.6384, 0.14912, 0.077561]
                         Z:
-                            Interpolation: Linear
+                            Interpolation: BSpline
                             Wrap: false
-                            FrameTimes: [1.1333, 2.1]
-                            FrameValues: [1.9843, 4.8102]
+                            FrameTimes: [1.1333, 1.4333, 1.8333, 2.9667]
+                            FrameValues: [1.9843, 4.9699, 5.4607, 5.652]
             Children:
                 -   Name: Foot 1
                     Enabled: true
@@ -473,8 +465,8 @@ Root:
                                         X:
                                             Interpolation: CatmullRom
                                             Wrap: false
-                                            FrameTimes: [2.7, 3.0667, 3.4]
-                                            FrameValues: [0.056441, -24.863, -38.059]
+                                            FrameTimes: [2.7, 3.0667, 3.4, 1.3667, 0.5, 0.3]
+                                            FrameValues: [0.056441, -24.863, -38.059, -1.4972, -56.429, 0.18918]
                                         Y:  0
                                         Z:
                                             Interpolation: CatmullRom
@@ -494,13 +486,13 @@ Root:
                                         Y:
                                             Interpolation: CatmullRom
                                             Wrap: false
-                                            FrameTimes: [2.2667, 2.6667, 3.3]
-                                            FrameValues: [1, 0.79893, 0.72409]
+                                            FrameTimes: [2.2667, 2.6667, 3.3, 0.73333, 1.0667]
+                                            FrameValues: [1, 0.79893, 0.72409, 0.75349, 0.99931]
                                         Z:
                                             Interpolation: CatmullRom
                                             Wrap: false
-                                            FrameTimes: [2.6, 3.1, 3.4667]
-                                            FrameValues: [-0.0018393, 0.46557, 0.57625]
+                                            FrameTimes: [2.6, 3.1, 3.4667, 0.43333, 1.4, 0.26667, 0.7]
+                                            FrameValues: [-0.0018393, 0.46557, 0.57625, 0.7622, 0.20528, -0.022404, 0.65307]
                             Children:
                                 -   Name: Cube 1
                                     Enabled: true
@@ -535,8 +527,8 @@ Root:
                                                 X:
                                                     Interpolation: BSpline
                                                     Wrap: false
-                                                    FrameTimes: [1, 1.6, 2]
-                                                    FrameValues: [0, 102.25, 0]
+                                                    FrameTimes: [1.0333, 1.6, 2, 0.56667, 0.8, 0.26667]
+                                                    FrameValues: [-10.939, 102.25, 0, 61.479, 62.906, 1.8424]
                                                 Y:  0
                                                 Z:  0
                                             Scale:
@@ -599,8 +591,8 @@ Root:
                                 X:
                                     Interpolation: CatmullRom
                                     Wrap: false
-                                    FrameTimes: [1, 1.2333, 1.7333, 2.3333, 2.7333, 3.1]
-                                    FrameValues: [-0.051323, -41.355, 3.4863, 42.701, 4.0799, 19.838]
+                                    FrameTimes: [1.2333, 2.3333, 2.7333, 3.1, 0.36667, 0.7, 0.96667]
+                                    FrameValues: [-41.355, 42.701, 4.0799, 19.838, -0.051323, 52.783, -1.4065]
                                 Y:  -1.3642e-14
                                 Z:  -1.9035e-13
                             Scale:
@@ -612,8 +604,8 @@ Root:
                                 Y:
                                     Interpolation: BSpline
                                     Wrap: false
-                                    FrameTimes: [2.7333, 2.7667, 4.5333, 6.3]
-                                    FrameValues: [2.2923, 2.0013, 1.5644, 1.6464]
+                                    FrameTimes: [2.7333, 2.7667, 4.5333, 6.3, 0.33333, 1.6667, 0.93333, 0.66667]
+                                    FrameValues: [2.2923, 2.0013, 1.5644, 1.6464, 1.9616, 2.2874, 2.3347, 1.5307]
                                 Z:  0
                     Children:
                         -   Name: Cube 1
@@ -685,8 +677,8 @@ Root:
                                                 X:
                                                     Interpolation: CatmullRom
                                                     Wrap: false
-                                                    FrameTimes: [0.7, 1.1667, 1.9, 2.8667]
-                                                    FrameValues: [-18.369, -54.512, -177.33, -13.281]
+                                                    FrameTimes: [0.4, 1.1667, 1.9, 2.8667, 0.66667, 0.93333]
+                                                    FrameValues: [-23.289, -54.512, -177.33, -13.281, -84.368, -35.268]
                                                 Y:  -50.964
                                                 Z:
                                                     Interpolation: CatmullRom
@@ -754,8 +746,8 @@ Root:
                                                         Y:
                                                             Interpolation: CatmullRom
                                                             Wrap: false
-                                                            FrameTimes: [1.0667, 2.0333, 2.7333]
-                                                            FrameValues: [0, -18.404, -39.016]
+                                                            FrameTimes: [1.5, 2.0333, 2.7333, 0.73333, 0.23333]
+                                                            FrameValues: [0, -18.404, -39.016, -102.26, 0.50884]
                                                         Z:  0
                                                     Scale:
                                                         X:  1
@@ -869,13 +861,21 @@ Root:
                                     Components:
                                         Transform:
                                             Rotation:
-                                                X:  -229
+                                                X:
+                                                    Interpolation: CatmullRom
+                                                    Wrap: false
+                                                    FrameTimes: [0.46667, 0.66667, 1.0667]
+                                                    FrameValues: [-241, -270.17, -241.76]
                                                 Y:
                                                     Interpolation: CatmullRom
                                                     Wrap: false
-                                                    FrameTimes: [1.0667, 2.1667, 0.76667]
-                                                    FrameValues: [42.588, 36.391, 86.994]
-                                                Z:  156
+                                                    FrameTimes: [0.8, 2.1667, 0.26667]
+                                                    FrameValues: [70.415, 36.391, 76.957]
+                                                Z:
+                                                    Interpolation: CatmullRom
+                                                    Wrap: false
+                                                    FrameTimes: [0.26667, 0.66667, 1.3333]
+                                                    FrameValues: [150, 214.39, 150]
                                             Scale:
                                                 X:  1
                                                 Y:  1
@@ -934,12 +934,12 @@ Root:
                                                 Transform:
                                                     Rotation:
                                                         X:  0
-                                                        Y:  0
-                                                        Z:
+                                                        Y:
                                                             Interpolation: CatmullRom
                                                             Wrap: false
-                                                            FrameTimes: [0.56667, 2.8333]
-                                                            FrameValues: [0, -46.07]
+                                                            FrameTimes: [0.66667, 1.5667]
+                                                            FrameValues: [-34.08, 0]
+                                                        Z:  -46.07
                                                     Scale:
                                                         X:  1
                                                         Y:  1
@@ -1054,8 +1054,8 @@ Root:
                                         X:
                                             Interpolation: CatmullRom
                                             Wrap: false
-                                            FrameTimes: [2.5333, 2.9333, 4.1]
-                                            FrameValues: [-0.50333, -24.223, -45.864]
+                                            FrameTimes: [2.5333, 2.9333, 4.1, 0.4, 0.63333, 1.4]
+                                            FrameValues: [-0.50333, -24.223, -45.864, -0.50333, 59.963, 0.89248]
                                         Y:  0
                                         Z:  0
                                     Scale:
@@ -1067,13 +1067,13 @@ Root:
                                         Y:
                                             Interpolation: CatmullRom
                                             Wrap: false
-                                            FrameTimes: [2.5667, 2.9, 3.3333]
-                                            FrameValues: [1, 0.78606, 0.69663]
+                                            FrameTimes: [2.5667, 2.9, 3.3333, 0.7, 1.0667]
+                                            FrameValues: [1, 0.78606, 0.69663, 0.68835, 0.98752]
                                         Z:
                                             Interpolation: CatmullRom
                                             Wrap: false
-                                            FrameTimes: [2.4667, 3.2333]
-                                            FrameValues: [-0.033566, 0.7192]
+                                            FrameTimes: [2.4667, 3.2333, 0.36667, 1.2667, 0.66667]
+                                            FrameValues: [-0.033566, 0.7192, -0.033566, -0.030188, -0.80321]
                             Children:
                                 -   Name: Cube 1
                                     Enabled: true
