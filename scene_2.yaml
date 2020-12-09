@@ -11,6 +11,9 @@ Textures:
     Checkers Texture:
         Bilinear: true
         Path: assets/checkers.png
+    attackmenu:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/attackmenu.png
     b010_900_02:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/b010_900_02.png
@@ -26,6 +29,9 @@ Textures:
     creeper_face:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/creeper_face.jpg
+    healthbar:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/healthbar.png
     joker_mask:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/joker_mask.png
@@ -44,6 +50,9 @@ Textures:
     sumire_chatbox:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/sumire_chatbox.png
+    technical:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/technical.png
     white_tiles:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/white_tiles.png
@@ -65,6 +74,17 @@ Materials:
                     G:  0.5
                     R:  0.5
                 Color Map: Alpha Test Texture
+                Use Texture: true
+    Attack Menu:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: attackmenu
                 Use Texture: true
     Blinn-Phong Material:
         Shader: Blinn-Phong Shader
@@ -226,6 +246,17 @@ Materials:
                     R:  1
                 Color Map: ""
                 Use Texture: false
+    Health Bar:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: healthbar
+                Use Texture: true
     Joker Mask:
         Shader: Textured Shader
         Uniforms:
@@ -383,10 +414,21 @@ Materials:
             DiffuseMap:
                 Color:
                     A:  1
-                    B:  0.49804
-                    G:  0.49804
-                    R:  0.49804
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
                 Color Map: sumire_chatbox
+                Use Texture: true
+    Technical:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: technical
                 Use Texture: true
     Textured Material:
         Shader: Textured Shader
@@ -549,7 +591,7 @@ Root:
                             Focus Distance: -6
                             Maximum Samples: 2
                             Minimum Samples: 0
-                            Monte Carlo: 1
+                            Monte Carlo: 2
                             Random Single Branching: true
                             Sample Count Type: 0
                             Samples Per Pixel: 0
@@ -2451,3 +2493,115 @@ Root:
                         Z:  -6
             Children:
                 []
+        -   Name: Attack menu
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Attack Menu
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  -35
+                        Y:  40
+                        Z:  30
+                    Scale:
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [4.0333, 1.0333, 2.5333, 5, 5.3, 0]
+                            FrameValues: [3.0399, 1.0506, 1.0529, 3.0399, 0.027643, 1.0256]
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [4.0333, 1, 2.4667, 5.3667, 4.9667]
+                            FrameValues: [3.0303, 1.8346, 1.8415, -0.023823, 3.0153]
+                        Z:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [2.0333, 0.96667]
+                            FrameValues: [1, 1]
+                    Translation:
+                        X:  0.92803
+                        Y:  2.008
+                        Z:  4.1014
+            Children:
+                []
+        -   Name: Empty Node 1
+            Enabled: true
+            Components:
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  0
+                        Z:  0
+            Children:
+                -   Name: Health Bar
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Health Bar
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  -35
+                                Y:  30
+                                Z:  -10
+                            Scale:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [8.7333, 9.2667, 8.5667, 11.333, 10.933]
+                                    FrameValues: [1.2995, 3, 0.048048, -0.03228, 3]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [8.8333, 9.1667, 8.6, 9.2667, 9.3667, 9.4333, 9.5, 10.7, 11.167]
+                                    FrameValues: [2.0854, 2.9673, 1.5302, 2.6558, 3.3323, 2.6114, 2.9933, 2.9933, -0.053966]
+                                Z:  1
+                            Translation:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [8.8333, 9.1667]
+                                    FrameValues: [1.061, 2.5]
+                                Y:  2.3583
+                                Z:  -1.3362
+                    Children:
+                        []
+                -   Name: Technical
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Technical
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  -35
+                                Y:  30
+                                Z:  19
+                            Scale:
+                                X:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [8.7667, 9.0667, 9, 9.0333, 9.1333, 9.1, 9.1667, 9.2333, 10.8, 11.067]
+                                    FrameValues: [0.08166, 6.5163, 5.9854, 3.5517, 6.9309, 4.1647, 3.6952, 5.2487, 5.4356, 0.015048]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [8.9333, 9, 9.1, 9.2667, 9.4667, 10.933, 11.2]
+                                    FrameValues: [5, 6.0431, 5.0602, 6.0431, 5.6018, 5.6018, 0.22214]
+                                Z:  1
+                            Translation:
+                                X:  1
+                                Y:  3
+                                Z:  -1
+                    Children:
+                        []

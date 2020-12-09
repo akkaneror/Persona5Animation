@@ -11,6 +11,9 @@ Textures:
     aoa:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/AOA/aoa.png
+    cherry_blossom:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/cherry_blossom.png
     haru:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/AOA/haru.png
@@ -145,29 +148,40 @@ Materials:
             ConstantAttenuation: 1
             LinearAttenuation: 0
             QuadraticAttenuation: 0
-    Material Red:
+    Emitter:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
                 Color:
                     A:  1
                     B:  0
-                    G:  0
-                    R:  1
+                    G:  1
+                    R:  0.94902
                 Color Map: ""
                 Use Texture: false
-    Material Black:
+    Haru Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
                 Color:
                     A:  1
-                    B:  0.070588
-                    G:  0.070588
-                    R:  0.070588
-                Color Map: ""
-                Use Texture: false
-    ScreenCrack:
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: haru
+                Use Texture: true
+    Hit Particle 1:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: hitparticle1
+                Use Texture: true
+    Hit Particle 2:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -176,7 +190,7 @@ Materials:
                     B:  0.49804
                     G:  0.49804
                     R:  0.49804
-                Color Map: screencrack
+                Color Map: hitparticle2
                 Use Texture: true
     Joker Splash:
         Shader: Textured Shader
@@ -189,7 +203,7 @@ Materials:
                     R:  0.5
                 Color Map: joker
                 Use Texture: true
-    Sumire Splash:
+    Cherry Blossom:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -198,8 +212,30 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: sumire
+                Color Map: cherry_blossom
                 Use Texture: true
+    Material Black:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.070588
+                    G:  0.070588
+                    R:  0.070588
+                Color Map: ""
+                Use Texture: false
+    Material Red:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0
+                    G:  0
+                    R:  1
+                Color Map: ""
+                Use Texture: false
     Morgana Splash:
         Shader: Textured Shader
         Uniforms:
@@ -211,7 +247,18 @@ Materials:
                     R:  0.5
                 Color Map: morgana
                 Use Texture: true
-    Haru Splash:
+    ScreenCrack:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: screencrack
+                Use Texture: true
+    Sumire Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -220,7 +267,7 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: haru
+                Color Map: sumire
                 Use Texture: true
     Textured Material:
         Shader: Textured Shader
@@ -373,8 +420,8 @@ Root:
                         Z:  1
                     Translation:
                         X:  1
-                        Y:  2.7
-                        Z:  3.5
+                        Y:  3.7
+                        Z:  8.5
             Children:
                 []
         -   Name: Key Light
@@ -455,9 +502,9 @@ Root:
                         Y:  30
                         Z:  1
                     Translation:
-                        X:  0
-                        Y:  0
-                        Z:  -2
+                        X:  0.00073814
+                        Y:  -0.023981
+                        Z:  -1.9912
             Children:
                 []
         -   Name: Plane 2
@@ -469,19 +516,236 @@ Root:
                 Transform:
                     Rotation:
                         X:  90
-                        Y:  0
+                        Y:  4
                         Z:  0
                     Scale:
-                        X:  20
-                        Y:  20
+                        X:  42
+                        Y:  23
                         Z:  1
                     Translation:
                         X:  0
-                        Y:  0.1
-                        Z:  0
+                        Y:  -0.9
+                        Z:  1
             Children:
                 []
-        -   Name: Sihou
+        -   Name: Particle
+            Enabled: true
+            Components:
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:
+                            Interpolation: CatmullRom
+                            Wrap: false
+                            FrameTimes: [0, 0.46667, 0.83333, 1.3, 1.5667, 1.8333, 2.3333, 2.9333, 3.3333, 3.6, 4]
+                            FrameValues: [-27, -16.145, -1.9417, 11.871, -28.459, -50.347, -56.184, 9.48, 9.48, -53.266, -27]
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  1
+                        Y:  3
+                        Z:  0
+            Children:
+                -   Name: Cube 1
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Emitter
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  1
+                                Z:  160
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  3
+                                Y:  8
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 3
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: ""
+                                    Subdivisions: 3
+                                ParticleSystem:
+                                    Billboard: false
+                                    Constant Force:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  0
+                                        Y:  25
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 1
+                                    Scale: 1.4
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  -1
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 2
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Material Red
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  -2
+                                Z:  -52
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  0
+                            Translation:
+                                X:  -8
+                                Y:  1
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 2
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: ""
+                                    Subdivisions: 3
+                                ParticleSystem:
+                                    Billboard: true
+                                    Constant Force:
+                                        X:  0
+                                        Y:  -0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  20
+                                        Y:  20
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 0.74257
+                                    Scale: 1.5
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 3
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Emitter
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  79
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  4
+                                Y:  -7
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 3
+                            Enabled: true
+                            Components:
+                                Sphere:
+                                    Material: ""
+                                    Quality: 4
+                                ParticleSystem:
+                                    Billboard: false
+                                    Constant Force:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 0
+                                    Initial Velocity:
+                                        X:  18
+                                        Y:  18
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 0.46535
+                                    Scale: 1.4
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 9
+                    Enabled: false
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: ScreenCrack
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+        -   Name: Collider
             Enabled: true
             Components:
                 Transform:
@@ -494,135 +758,948 @@ Root:
                         Y:  1
                         Z:  1
                     Translation:
+                        X:  1
+                        Y:  3
+                        Z:  0
+            Children:
+                -   Name: Creeper
+                    Enabled: true
+                    Components:
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1, 1.1333, 2, 1.9333, 2.9667, 3.9667, 3.0333, 4]
+                                    FrameValues: [0.021314, -0.45033, 0.5243, -0.45662, 0.51304, 0.3206, 0.31408, 0]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1, 1.9667, 4, 1.1333, 2.0333, 2.9667, 3, 3.9333]
+                                    FrameValues: [-0.001324, -0.19265, 0, -0.19212, 0.21397, 0.20483, -0.24056, -0.22963]
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1, 1.1333, 1.4667, 1.8, 2.5667, 3.6667, 4, 2.1333, 3.1, 1.2, 1.3, 1.5667, 1.7333, 1.9, 2.0333, 2.8, 3.4333, 1.6667]
+                                    FrameValues: [-0.0022761, -0.62093, 0, -0.039622, -0.11599, -0.21174, 0, -0.037603, -0.10226, 0.0089954, -0.31046, -0.17112, -0.41355, -0.27023, -0.22016, -0.021347, -0.022222, -0.048331]
+                    Children:
+                        -   Name: Body
+                            Enabled: true
+                            Components:
+                                TriangleMesh:
+                                    LoopSubdivision: 0
+                                    Material: Material Black
+                                    Mesh: Cube
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  12
+                                    Scale:
+                                        X:  1
+                                        Y:  1.5
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                        -   Name: LH
+                            Enabled: true
+                            Components:
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [0.63333, 1.3, 1.6333, 2.2, 2.8, 3.1]
+                                            FrameValues: [-40.034, -62.692, -62.345, -27.86, -27.512, -52.367]
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  -0.5
+                                        Y:  0.4
+                                        Z:  0
+                            Children:
+                                -   Name: L Hand
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Material Black
+                                            Mesh: Cube
+                                        Transform:
+                                            Rotation:
+                                                X:  0
+                                                Y:  0
+                                                Z:  0
+                                            Scale:
+                                                X:  1.25
+                                                Y:  0.5
+                                                Z:  1
+                                            Translation:
+                                                X:  -0.5
+                                                Y:  0
+                                                Z:  3.6955e-06
+                                    Children:
+                                        []
+                        -   Name: RH
+                            Enabled: true
+                            Components:
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [1.2, 0.8, 1.6667, 2.1, 2.6667, 3.0333]
+                                            FrameValues: [-7.5887, -43, -7.5887, -110.99, -109.4, 17.78]
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0.5
+                                        Y:  0.5
+                                        Z:  0
+                            Children:
+                                -   Name: R Hand
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Material Black
+                                            Mesh: Cube
+                                        Transform:
+                                            Rotation:
+                                                X:  0
+                                                Y:  0
+                                                Z:  -11
+                                            Scale:
+                                                X:  1.25
+                                                Y:  0.5
+                                                Z:  1
+                                            Translation:
+                                                X:  0.5
+                                                Y:  0
+                                                Z:  0
+                                    Children:
+                                        []
+                        -   Name: LL
+                            Enabled: true
+                            Components:
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [0.73333, 1.4, 1.8, 2.2, 2.9667, 2.7]
+                                            FrameValues: [0, 24.4, 24.4, -28.625, 23.181, -28.625]
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  -1
+                                        Z:  0
+                            Children:
+                                -   Name: L Leg
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Material Black
+                                            Mesh: Cube
+                                        Transform:
+                                            Rotation:
+                                                X:  0
+                                                Y:  0
+                                                Z:  10
+                                            Scale:
+                                                X:  0.5
+                                                Y:  1.25
+                                                Z:  1
+                                            Translation:
+                                                X:  0
+                                                Y:  -0.5
+                                                Z:  0
+                                    Children:
+                                        []
+                        -   Name: RL
+                            Enabled: true
+                            Components:
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:
+                                            Interpolation: Linear
+                                            Wrap: false
+                                            FrameTimes: [0.63333, 1.3, 1.8667, 2.3, 2.7, 3.0333]
+                                            FrameValues: [1, 37.392, 37.392, -26.789, -26.789, 96.619]
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0.54018
+                                        Y:  -0.7784
+                                        Z:  0
+                            Children:
+                                -   Name: R Leg
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Material Black
+                                            Mesh: Cube
+                                        Transform:
+                                            Rotation:
+                                                X:  0
+                                                Y:  0
+                                                Z:  18
+                                            Scale:
+                                                X:  0.5
+                                                Y:  1.25
+                                                Z:  1
+                                            Translation:
+                                                X:  0
+                                                Y:  -0.5
+                                                Z:  0.038842
+                                    Children:
+                                        []
+                        -   Name: Head
+                            Enabled: true
+                            Components:
+                                TriangleMesh:
+                                    LoopSubdivision: 0
+                                    Material: Material Black
+                                    Mesh: Cube
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  1.2
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cylinder Collider 1
+                    Enabled: false
+                    Components:
+                        CylinderCollider:
+                            Diameter: 1
+                            Height: 1.5085
+                            Restitution: 0.75
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Sphere Collider 1
+                    Enabled: true
+                    Components:
+                        SphereCollider:
+                            Radius: 0.2098
+                            Restitution: 1
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  -1
+                                Y:  1
+                                Z:  0
+                    Children:
+                        []
+        -   Name: Particle 2
+            Enabled: true
+            Components:
+                Transform:
+                    Rotation:
+                        X:  0
+                        Y:  0
+                        Z:
+                            Interpolation: BSpline
+                            Wrap: false
+                            FrameTimes: [0, 0.4, 0.9, 1.6, 2, 2.3333, 2.7, 3.1333, 3.5333, 4]
+                            FrameValues: [-131, -156.54, -158, -106.92, -111.3, -149.24, -150.7, -106.92, -109.84, -131]
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  1
+                        Y:  3
+                        Z:  0
+            Children:
+                -   Name: Cube 1
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Emitter
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  1
+                                Z:  160
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  3
+                                Y:  8
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 3
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: ""
+                                    Subdivisions: 3
+                                ParticleSystem:
+                                    Billboard: false
+                                    Constant Force:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  0
+                                        Y:  35
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 1.2
+                                    Scale: 1.9
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  -1
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 2
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Material Red
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  -2
+                                Z:  -52
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  0
+                            Translation:
+                                X:  -8
+                                Y:  1
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 2
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: ""
+                                    Subdivisions: 3
+                                ParticleSystem:
+                                    Billboard: true
+                                    Constant Force:
+                                        X:  0
+                                        Y:  -0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  25
+                                        Y:  25
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 0.89109
+                                    Scale: 1
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 3
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Material Red
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  79
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  4
+                                Y:  -7
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 1
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: ""
+                                    Subdivisions: 3
+                                ParticleSystem:
+                                    Billboard: false
+                                    Constant Force:
+                                        X:  0
+                                        Y:  -9.8
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  0
+                                        Y:  19
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 0.5
+                                    Scale: 1
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  -42
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 9
+                    Enabled: false
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: ScreenCrack
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+        -   Name: Particle 3
+            Enabled: true
+            Components:
+                Transform:
+                    Rotation:
+                        X:  83
+                        Y:  8
+                        Z:  2
+                    Scale:
+                        X:  1
+                        Y:  -1
+                        Z:  1
+                    Translation:
+                        X:  1
+                        Y:  3
+                        Z:  0
+            Children:
+                -   Name: Cube 2
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Emitter
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  -2
+                                Z:  13
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  0
+                            Translation:
+                                X:  -2
+                                Y:  -8
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 2
+                            Enabled: true
+                            Components:
+                                Cylinder:
+                                    Material: ""
+                                    Subdivisions: 3
+                                ParticleSystem:
+                                    Billboard: true
+                                    Constant Force:
+                                        X:  0
+                                        Y:  -0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  21
+                                        Y:  21
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 0.89109
+                                    Scale: 1.2
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 3
+                    Enabled: true
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: Emitter
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  -8
+                                Z:  83
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  4
+                                Y:  -7
+                                Z:  0
+                    Children:
+                        -   Name: Particle System 3
+                            Enabled: true
+                            Components:
+                                Sphere:
+                                    Material: ""
+                                    Quality: 4
+                                ParticleSystem:
+                                    Billboard: false
+                                    Constant Force:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Drag Coefficient: 0
+                                    Geometry: 1
+                                    Initial Velocity:
+                                        X:  18
+                                        Y:  18
+                                        Z:  0
+                                    Mass: 0.1
+                                    Material: Material Black
+                                    Period (s): 0.70297
+                                    Scale: 1.5
+                                Transform:
+                                    Rotation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                                    Scale:
+                                        X:  1
+                                        Y:  1
+                                        Z:  1
+                                    Translation:
+                                        X:  0
+                                        Y:  0
+                                        Z:  0
+                            Children:
+                                []
+                -   Name: Cube 9
+                    Enabled: false
+                    Components:
+                        TriangleMesh:
+                            LoopSubdivision: 0
+                            Material: ScreenCrack
+                            Mesh: Cube
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  1
+                                Y:  1
+                                Z:  1
+                            Translation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                    Children:
+                        []
+        -   Name: Hit Particle
+            Enabled: true
+            Components:
+                Transform:
+                    Rotation:
                         X:  0
                         Y:  0
                         Z:  0
+                    Scale:
+                        X:  1
+                        Y:  1
+                        Z:  1
+                    Translation:
+                        X:  1
+                        Y:  3
+                        Z:  3
             Children:
-                -   Name: Sihou1
+                -   Name: Plane 1
                     Enabled: true
                     Components:
-                        SurfaceOfRevolution:
-                            Curve: C:/P5/Persona5Animation/assets/AOA/thieve3.apts
-                            Material: Material Black
-                            Quality: 0
+                        Plane:
+                            Material: Hit Particle 1
+                            Subdivisions: 0
                         Transform:
                             Rotation:
                                 X:  0
-                                Y:  5.3361e-08
-                                Z:  0
+                                Y:  0
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [3.9, 5, 5.5333]
+                                    FrameValues: [0, 288.73, 636.19]
                             Scale:
-                                X:  0.4
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [3, 3.1667, 3.8, 4.1, 5.6, 4.8]
+                                    FrameValues: [0.028959, 2, 2, 6.5621, 200, 11.82]
                                 Y:
                                     Interpolation: Linear
                                     Wrap: false
-                                    FrameTimes: [0, 0.5]
-                                    FrameValues: [0.22693, 0.4989]
-                                Z:  0.4
+                                    FrameTimes: [3, 3.2333, 3.8667, 5.6333, 4.8]
+                                    FrameValues: [0.028959, 2, 2, 202.95, 11.898]
+                                Z:  1
                             Translation:
                                 X:  0
-                                Y:
-                                    Interpolation: Linear
-                                    Wrap: false
-                                    FrameTimes: [0, 0.93333]
-                                    FrameValues: [2.1, 6.1141]
-                                Z:  0.2
+                                Y:  0
+                                Z:  0
                     Children:
                         []
-                -   Name: Sihou2
+                -   Name: Plane 2
                     Enabled: true
                     Components:
-                        SurfaceOfRevolution:
-                            Curve: C:/P5/Persona5Animation/assets/AOA/thieve1.apts
-                            Material: Material Black
-                            Quality: 0
+                        Plane:
+                            Material: Hit Particle 2
+                            Subdivisions: 0
                         Transform:
                             Rotation:
                                 X:  0
-                                Y:  5.3361e-08
-                                Z:  0
+                                Y:  0
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [2.1, 3]
+                                    FrameValues: [-39, 136.22]
                             Scale:
-                                X:  0.4
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [2, 2.8667, 3]
+                                    FrameValues: [0.01448, 1.673, 0.01448]
                                 Y:
                                     Interpolation: Linear
                                     Wrap: false
-                                    FrameTimes: [0.13333, 0.63333]
-                                    FrameValues: [0.22693, 0.4434]
-                                Z:  0.4
+                                    FrameTimes: [2.8667, 3, 2]
+                                    FrameValues: [1.5769, -0.033595, -0.033595]
+                                Z:  1
                             Translation:
-                                X:  1.2
-                                Y:
-                                    Interpolation: Linear
-                                    Wrap: false
-                                    FrameTimes: [0.26667, 0.73333, 1]
-                                    FrameValues: [2.1, 2.3438, 6.0423]
-                                Z:  0.2
+                                X:  0
+                                Y:  1
+                                Z:  0
                     Children:
                         []
-                -   Name: Sihou3
+                -   Name: Plane 3
                     Enabled: true
                     Components:
-                        SurfaceOfRevolution:
-                            Curve: C:/P5/Persona5Animation/assets/AOA/thieve3.apts
-                            Material: Material Black
-                            Quality: 0
+                        Plane:
+                            Material: Hit Particle 2
+                            Subdivisions: 0
                         Transform:
                             Rotation:
                                 X:  0
-                                Y:  5.3361e-08
-                                Z:  0
+                                Y:  0
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.1, 2.0333]
+                                    FrameValues: [0, 89.934]
                             Scale:
-                                X:  0.4
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.3333, 1.0667, 1.8667]
+                                    FrameValues: [1.7637, 0.028959, 1.968]
                                 Y:
                                     Interpolation: Linear
                                     Wrap: false
-                                    FrameTimes: [0.26667, 0.8]
-                                    FrameValues: [0.24653, 0.51101]
-                                Z:  0.4
+                                    FrameTimes: [1.8667, 2, 1.3, 1]
+                                    FrameValues: [2, 0.004922, 1.7596, 0.004922]
+                                Z:  1
                             Translation:
-                                X:  2.2
-                                Y:
-                                    Interpolation: Linear
-                                    Wrap: false
-                                    FrameTimes: [0.36667, 0.8, 1]
-                                    FrameValues: [1.9403, 2.9028, 6.0423]
-                                Z:  0.2
+                                X:  1
+                                Y:  0
+                                Z:  0
                     Children:
                         []
-                -   Name: Sihou4
+                -   Name: Plane 3 2
                     Enabled: true
                     Components:
-                        SurfaceOfRevolution:
-                            Curve: C:/P5/Persona5Animation/assets/AOA/thieve1.apts
-                            Material: Material Black
-                            Quality: 0
+                        Plane:
+                            Material: Hit Particle 2
+                            Subdivisions: 0
                         Transform:
                             Rotation:
                                 X:  0
-                                Y:  -1.0672e-07
-                                Z:  0
+                                Y:  0
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.9667, 1.2333]
+                                    FrameValues: [290.68, 33]
                             Scale:
-                                X:  0.4
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.0667, 2.2, 1.4, 1.8333]
+                                    FrameValues: [0.028959, -0.0025315, 2.9597, 3.1608]
                                 Y:
                                     Interpolation: Linear
                                     Wrap: false
-                                    FrameTimes: [0.4, 1]
-                                    FrameValues: [0.22693, 0.50377]
-                                Z:  0.4
+                                    FrameTimes: [1.8333, 2.2333, 1.4, 1.1]
+                                    FrameValues: [3.1719, 0.004922, 2.9718, 0.03576]
+                                Z:  1
                             Translation:
-                                X:  -1.2
-                                Y:
-                                    Interpolation: Linear
-                                    Wrap: false
-                                    FrameTimes: [0.63333, 1, 1.2667]
-                                    FrameValues: [2.0981, 3.251, 7.448]
-                                Z:  0.2
+                                X:  -1
+                                Y:  2
+                                Z:  0
                     Children:
                         []
-        -   Name: Screen Crack
+                -   Name: Plane 3 2
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Hit Particle 1
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.0333, 2]
+                                    FrameValues: [0, 377.93]
+                            Scale:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.2333, 0.9, 1.7667, 1.8667]
+                                    FrameValues: [2.8702, 0.083265, 3.0803, 0.035191]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.8333, 1.2667, 0.86667, 1.7667]
+                                    FrameValues: [0.032075, 2.9451, 0.059228, 2.9762]
+                                Z:  1
+                            Translation:
+                                X:  -1
+                                Y:  -1
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 2 2
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Hit Particle 1
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  225.78
+                            Scale:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [1.8333, 2.2, 3.4333, 3.1667]
+                                    FrameValues: [-0.01331, 2.2787, 0.0028432, 2.2859]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [3.4333, 3.1333, 2.2333, 1.8667]
+                                    FrameValues: [0.015293, 2.1313, 2.1899, -0.024331]
+                                Z:  1
+                            Translation:
+                                X:  1
+                                Y:  2
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 2 2
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Hit Particle 2
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [3.2, 2.1667]
+                                    FrameValues: [325.18, -39]
+                            Scale:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [2, 2.8667, 3]
+                                    FrameValues: [0.01448, 1.673, 0.01448]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [2.8667, 3, 2]
+                                    FrameValues: [1.5769, -0.033595, -0.033595]
+                                Z:  1
+                            Translation:
+                                X:  1
+                                Y:  -1
+                                Z:  0
+                    Children:
+                        []
+                -   Name: Plane 1 2
+                    Enabled: true
+                    Components:
+                        Plane:
+                            Material: Hit Particle 2
+                            Subdivisions: 0
+                        Transform:
+                            Rotation:
+                                X:  0
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [3, 3.1667, 3.8, 4]
+                                    FrameValues: [0.028959, 2, 2, 0.004922]
+                                Y:
+                                    Interpolation: Linear
+                                    Wrap: false
+                                    FrameTimes: [3, 3.2333, 3.8667, 4]
+                                    FrameValues: [0.028959, 2, 2, 0.004922]
+                                Z:  1
+                            Translation:
+                                X:  1
+                                Y:  2
+                                Z:  0
+                    Children:
+                        []
+        -   Name: Cherry Blossom
             Enabled: true
             Components:
                 Plane:
-                    Material: ScreenCrack
+                    Material: Cherry Blossom
                     Subdivisions: 0
                 Transform:
                     Rotation:
@@ -630,117 +1707,20 @@ Root:
                         Y:  0
                         Z:  0
                     Scale:
-                        X:  7
-                        Y:  4
-                        Z:  1
-                    Translation:
-                        X:  1.2
-                        Y:  2.5
-                        Z:
+                        X:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [0.53333, 0.5]
-                            FrameValues: [-0.027676, -8.7749]
-            Children:
-                []
-        -   Name: Empty Node 2
-            Enabled: true
-            Components:
-                Transform:
-                    Rotation:
-                        X:  0
-                        Y:  0
-                        Z:  0
-                    Scale:
-                        X:  1
-                        Y:  1
+                            FrameTimes: [6, 7]
+                            FrameValues: [0.0006058, 20.05]
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [6, 7]
+                            FrameValues: [0.00039019, 20]
                         Z:  1
                     Translation:
-                        X:  0
-                        Y:  0
-                        Z:  0
+                        X:  1
+                        Y:  3.5
+                        Z:  7
             Children:
-                -   Name: joker
-                    Enabled: true
-                    Components:
-                        Plane:
-                            Material: Joker Splash
-                            Subdivisions: 0
-                        Transform:
-                            Rotation:
-                                X:  0
-                                Y:  0
-                                Z:  -3
-                            Scale:
-                                X:  2.1
-                                Y:  2.1
-                                Z:  1
-                            Translation:
-                                X:  3.1
-                                Y:  2.9
-                                Z:  0.2
-                    Children:
-                        []
-                -   Name: sumire
-                    Enabled: true
-                    Components:
-                        Plane:
-                            Material: Sumire Splash
-                            Subdivisions: 0
-                        Transform:
-                            Rotation:
-                                X:  0
-                                Y:  0
-                                Z:  0
-                            Scale:
-                                X:  2.1
-                                Y:  2.1
-                                Z:  1
-                            Translation:
-                                X:  -1.1
-                                Y:  3.3
-                                Z:  0
-                    Children:
-                        []
-                -   Name: haru
-                    Enabled: true
-                    Components:
-                        Plane:
-                            Material: Haru Splash
-                            Subdivisions: 0
-                        Transform:
-                            Rotation:
-                                X:  0
-                                Y:  0
-                                Z:  0
-                            Scale:
-                                X:  2.1
-                                Y:  2.1
-                                Z:  1
-                            Translation:
-                                X:  0.5
-                                Y:  1.7
-                                Z:  0.2
-                    Children:
-                        []
-                -   Name: morgana
-                    Enabled: true
-                    Components:
-                        Plane:
-                            Material: Morgana Splash
-                            Subdivisions: 0
-                        Transform:
-                            Rotation:
-                                X:  0
-                                Y:  0
-                                Z:  0
-                            Scale:
-                                X:  2.1
-                                Y:  2.1
-                                Z:  1
-                            Translation:
-                                X:  1
-                                Y:  3.5
-                                Z:  0.2
-                    Children:
-                        []
+                []
