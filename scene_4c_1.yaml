@@ -1,46 +1,46 @@
-Name: scene_3b
-Animation Length: 6
+Name: scene_4c
+Animation Length: 2
 Animation FPS: 30
 Textures:
-    1314204:
-        Bilinear: true
-        Path: ../../../../../P5/Persona5Animation/assets/1314204.jpg
     Alpha Test Texture:
         Bilinear: true
         Path: assets/alpha_test.png
     Checkers Texture:
         Bilinear: true
         Path: assets/checkers.png
+    aoa:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/AOA/aoa.png
     cape:
         Bilinear: true
         Path: ../../../../../P5/Persona5Animation/assets/cape.png
-    creeper_body:
+    haru:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/creeper_body.png
-    creeper_face:
+        Path: C:/P5/Persona5Animation/assets/AOA/haru.png
+    hitparticle:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/creeper_face.jpg
-    joker_mask:
+        Path: C:/P5/Persona5Animation/assets/AOA/hitparticle.png
+    hitparticle1:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/joker_mask.png
+        Path: C:/P5/Persona5Animation/assets/AOA/hitparticle1.png
+    hitparticle2:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/AOA/hitparticle2.png
+    joker:
+        Bilinear: true
+        Path: C:/P5/Persona5Animation/assets/AOA/joker.png
     kasumi_mask:
         Bilinear: true
         Path: ../../../../../P5/Persona5Animation/assets/AOA/kasumi_mask.png
-    knockdown:
+    morgana:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/knockdown.png
-    magic_circle_2:
+        Path: C:/P5/Persona5Animation/assets/AOA/morgana.png
+    screencrack:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/magic_circle_2.png
-    pillars:
+        Path: C:/P5/Persona5Animation/assets/AOA/screencrack.png
+    sumire:
         Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/pillars.jpg
-    smoke:
-        Bilinear: true
-        Path: ../../../../../P5/Persona5Animation/assets/smoke.png
-    white_tiles:
-        Bilinear: true
-        Path: C:/P5/Persona5Animation/assets/white_tiles.png
+        Path: C:/P5/Persona5Animation/assets/AOA/sumire.png
 Cubemaps:
     {}
 Meshes:
@@ -63,9 +63,9 @@ Materials:
             Diffuse:
                 Color:
                     A:  1
-                    B:  0
-                    G:  0
-                    R:  1
+                    B:  0.17647
+                    G:  0.17647
+                    R:  0.49804
                 Color Map: ""
                 Use Texture: false
             Emissive:
@@ -142,28 +142,6 @@ Materials:
                     R:  0.5
                 Color Map: cape
                 Use Texture: true
-    Creeper Body:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: creeper_body
-                Use Texture: true
-    Creeper Head:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: creeper_face
-                Use Texture: true
     Depth Map Material:
         Shader: Depth Shader
         Uniforms:
@@ -184,17 +162,6 @@ Materials:
             ConstantAttenuation: 1
             LinearAttenuation: 0
             QuadraticAttenuation: 0
-    Ground texture:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: 1314204
-                Use Texture: true
     Hair:
         Shader: Textured Shader
         Uniforms:
@@ -206,7 +173,7 @@ Materials:
                     R:  1
                 Color Map: ""
                 Use Texture: false
-    KnockDown:
+    Haru Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -215,9 +182,9 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: knockdown
+                Color Map: haru
                 Use Texture: true
-    Magic Circle:
+    Joker Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -226,9 +193,9 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: magic_circle_2
+                Color Map: joker
                 Use Texture: true
-    Mask:
+    Kasumi mask:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -276,6 +243,17 @@ Materials:
                     R:  0
                 Color Map: ""
                 Use Texture: false
+    Material Dark Red:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.1451
+                    G:  0.1451
+                    R:  0.43922
+                Color Map: ""
+                Use Texture: false
     Material Red:
         Shader: Textured Shader
         Uniforms:
@@ -287,7 +265,7 @@ Materials:
                     R:  1
                 Color Map: ""
                 Use Texture: false
-    Pillars:
+    Morgana Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
@@ -296,7 +274,18 @@ Materials:
                     B:  0.5
                     G:  0.5
                     R:  0.5
-                Color Map: pillars
+                Color Map: morgana
+                Use Texture: true
+    ScreenCrack:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.49804
+                    G:  0.49804
+                    R:  0.49804
+                Color Map: screencrack
                 Use Texture: true
     Skin:
         Shader: Textured Shader
@@ -309,16 +298,16 @@ Materials:
                     R:  0.99216
                 Color Map: ""
                 Use Texture: false
-    Smoke texture:
+    Sumire Splash:
         Shader: Textured Shader
         Uniforms:
             DiffuseMap:
                 Color:
                     A:  1
-                    B:  0
-                    G:  0
-                    R:  1
-                Color Map: smoke
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: sumire
                 Use Texture: true
     Textured Material:
         Shader: Textured Shader
@@ -368,17 +357,6 @@ Materials:
                     R:  0
                 Color Map: ""
                 Use Texture: false
-    White Tile:
-        Shader: Textured Shader
-        Uniforms:
-            DiffuseMap:
-                Color:
-                    A:  1
-                    B:  0.49804
-                    G:  0.49804
-                    R:  0.49804
-                Color Map: white_tiles
-                Use Texture: true
 ShaderPrograms:
     Alpha Test Shader:
         Fragment: ""
@@ -462,7 +440,7 @@ Root:
                             Monte Carlo: 0
                             Random Single Branching: true
                             Sample Count Type: 0
-                            Samples Per Pixel: 0
+                            Samples Per Pixel: 2
                             Std. Error Threshold: 0.02
                         Shadows: 2
                     Trace Debugger:
@@ -473,21 +451,25 @@ Root:
                         Show Surface Normals: true
                 Transform:
                     Rotation:
-                        X:  -35
-                        Y:  30
-                        Z:  19
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.1, 1.7]
+                            FrameValues: [14.816, -14.357]
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1.6333, 0.033333]
+                            FrameValues: [0.0013625, -2.62]
+                        Z:  4
                     Scale:
                         X:  1
                         Y:  1
                         Z:  1
                     Translation:
-                        X:  4
-                        Y:  5
-                        Z:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [0.76667, 3.0333]
-                            FrameValues: [6, 8.1483]
+                        X:  0.76902
+                        Y:  4.5895
+                        Z:  3.5
             Children:
                 []
         -   Name: Key Light
@@ -552,25 +534,46 @@ Root:
                         Z:  -1.4142
             Children:
                 []
-        -   Name: Ground
+        -   Name: Plane 1
             Enabled: true
             Components:
                 Plane:
-                    Material: Ground texture
+                    Material: Material Red
+                    Subdivisions: 0
+                Transform:
+                    Rotation:
+                        X:  -4.8734
+                        Y:  0
+                        Z:  0
+                    Scale:
+                        X:  140
+                        Y:  100
+                        Z:  1
+                    Translation:
+                        X:  0
+                        Y:  43
+                        Z:  -30
+            Children:
+                []
+        -   Name: Plane 2
+            Enabled: true
+            Components:
+                Plane:
+                    Material: Material Black
                     Subdivisions: 0
                 Transform:
                     Rotation:
                         X:  90
                         Y:  0
-                        Z:  1
+                        Z:  0
                     Scale:
-                        X:  50
-                        Y:  20
+                        X:  100
+                        Y:  100
                         Z:  1
                     Translation:
-                        X:  0.02453
-                        Y:  -1.4603e-05
-                        Z:  -0.026259
+                        X:  1
+                        Y:  -3.9
+                        Z:  1
             Children:
                 []
         -   Name: Thief_middle
@@ -580,290 +583,100 @@ Root:
                     Angle: 0
                 Transform:
                     Rotation:
-                        X:
-                            Interpolation: CatmullRom
-                            Wrap: false
-                            FrameTimes: [1, 1.4333, 2.2, 3.2667]
-                            FrameValues: [180.27, 343.97, 494.08, 536.11]
-                        Y:  0
-                        Z:  -180
+                        X:  -180
+                        Y:  -85.886
+                        Z:  -168
                     Scale:
-                        X:  0.5
-                        Y:  0.5
-                        Z:  0.5
-                    Translation:
-                        X:  0
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [1.7667, 0.033333, 1.7333]
+                            FrameValues: [0.0056635, 0.50245, 0.5]
                         Y:
-                            Interpolation: BSpline
+                            Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [1.3, 2.2, 2.7333, 1.0667, 3.3667, 0.9, 0.3]
-                            FrameValues: [4.9836, 1.0011, 0.42221, 2.6384, 0.14912, 0.077561, 0.14]
+                            FrameTimes: [1.7667, 0.033333, 1.7333]
+                            FrameValues: [0.0086168, 0.5, 0.49549]
                         Z:
-                            Interpolation: BSpline
+                            Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [1.1333, 1.4333, 1.8333, 2.9667, 0.1]
-                            FrameValues: [3.7248, 4.9699, 5.4607, 5.652, 4]
+                            FrameTimes: [1.7667, 0.033333, 1.7333]
+                            FrameValues: [0.0001608, 0.5, 0.50446]
+                    Translation:
+                        X:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.066667, 1.6667]
+                            FrameValues: [6.774, 1.0478]
+                        Y:
+                            Interpolation: Linear
+                            Wrap: false
+                            FrameTimes: [0.1, 1.7]
+                            FrameValues: [5.9856, 1.1358]
+                        Z:  -0.8
             Children:
-                -   Name: Foot 1
-                    Enabled: true
-                    Components:
-                        CustomProp:
-                            Angle: 359
-                        EnvironmentMap:
-                            Far Plane: 100
-                            Near Plane: 0.1
-                            Render Material: ""
-                            Resolution (px): 400
-                        Transform:
-                            Rotation:
-                                X:  0
-                                Y:  0
-                                Z:  0
-                            Scale:
-                                X:  1
-                                Y:  1
-                                Z:  1
-                            Translation:
-                                X:  0.3
-                                Y:  0.3
-                                Z:  0
-                    Children:
-                        -   Name: Leg 1
-                            Enabled: true
-                            Components:
-                                Transform:
-                                    Rotation:
-                                        X:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.7, 3.0667, 3.4, 1.3667, 0.5, 0.3]
-                                            FrameValues: [0.056441, -24.863, -38.059, -1.4972, -56.429, 0.18918]
-                                        Y:  0
-                                        Z:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.4, 2.8333]
-                                            FrameValues: [-0.20226, 20.135]
-                                    Scale:
-                                        X:  1
-                                        Y:  1
-                                        Z:  1
-                                    Translation:
-                                        X:
-                                            Interpolation: Linear
-                                            Wrap: false
-                                            FrameTimes: [2.3, 2.9667]
-                                            FrameValues: [-0.0036175, 0.33042]
-                                        Y:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.2667, 2.6667, 3.3, 0.73333, 1.0667]
-                                            FrameValues: [1, 0.79893, 0.72409, 0.75349, 0.99931]
-                                        Z:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.6, 3.1, 3.4667, 1.4, 0.26667, 0.7]
-                                            FrameValues: [-0.0018393, 0.46557, 0.57625, 0.20528, -0.022404, 0.65307]
-                            Children:
-                                -   Name: Cube 1
-                                    Enabled: true
-                                    Components:
-                                        TriangleMesh:
-                                            LoopSubdivision: 0
-                                            Material: Skin
-                                            Mesh: Cube
-                                        Transform:
-                                            Rotation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
-                                            Scale:
-                                                X:  0.25
-                                                Y:  1
-                                                Z:  0.25
-                                            Translation:
-                                                X:  0
-                                                Y:  0.5
-                                                Z:  0
-                                    Children:
-                                        []
-                                -   Name: Knee 1
-                                    Enabled: true
-                                    Components:
-                                        Sphere:
-                                            Material: Material Black
-                                            Quality: 4
-                                        Transform:
-                                            Rotation:
-                                                X:
-                                                    Interpolation: BSpline
-                                                    Wrap: false
-                                                    FrameTimes: [1.0333, 1.6, 2, 0.56667, 0.8, 0.26667]
-                                                    FrameValues: [-10.939, 102.25, 0, 61.479, 62.906, 1.8424]
-                                                Y:  0
-                                                Z:  0
-                                            Scale:
-                                                X:  0.4
-                                                Y:  0.4
-                                                Z:  0.4
-                                            Translation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
-                                    Children:
-                                        -   Name: Cube 1
-                                            Enabled: true
-                                            Components:
-                                                TriangleMesh:
-                                                    LoopSubdivision: 0
-                                                    Material: Material Black
-                                                    Mesh: Cube
-                                                Transform:
-                                                    Rotation:
-                                                        X:  -2.0924e-08
-                                                        Y:  6.3856e-13
-                                                        Z:  3.1429e-13
-                                                    Scale:
-                                                        X:  0.63755
-                                                        Y:  2.5503
-                                                        Z:  0.63755
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  -1.25
-                                                        Z:  -9.5367e-07
-                                            Children:
-                                                -   Name: Feet 1
-                                                    Enabled: true
-                                                    Components:
-                                                        TriangleMesh:
-                                                            LoopSubdivision: 0
-                                                            Material: Material Black
-                                                            Mesh: Pyramid
-                                                        Transform:
-                                                            Rotation:
-                                                                X:  -0
-                                                                Y:  0
-                                                                Z:  -1.7251e-13
-                                                            Scale:
-                                                                X:  2.0096
-                                                                Y:  0.5024
-                                                                Z:  2.0096
-                                                            Translation:
-                                                                X:  0
-                                                                Y:  -0.49015
-                                                                Z:  0
-                                                    Children:
-                                                        []
                 -   Name: Waist
                     Enabled: true
                     Components:
                         Transform:
                             Rotation:
-                                X:
-                                    Interpolation: CatmullRom
-                                    Wrap: false
-                                    FrameTimes: [1.2333, 2.3333, 2.7333, 3.1, 0.36667, 0.7, 0.96667]
-                                    FrameValues: [-41.355, 42.701, 4.0799, 19.838, -0.051323, 52.783, -1.4065]
-                                Y:  -1.3642e-14
-                                Z:  -1.9035e-13
+                                X:  0
+                                Y:  5.9877
+                                Z:  -1
                             Scale:
                                 X:  1
                                 Y:  1
                                 Z:  1
                             Translation:
                                 X:  0.3
-                                Y:
-                                    Interpolation: BSpline
-                                    Wrap: false
-                                    FrameTimes: [2.7333, 2.7667, 0.33333, 1.6667, 0.93333, 0.66667]
-                                    FrameValues: [2.2923, 2.0013, 1.9616, 2.2874, 2.3347, 1.5307]
+                                Y:  2.0013
                                 Z:  0
                     Children:
-                        -   Name: Cube 1
-                            Enabled: true
-                            Components:
-                                TriangleMesh:
-                                    LoopSubdivision: 0
-                                    Material: Material Black
-                                    Mesh: Pyramid
-                                Transform:
-                                    Rotation:
-                                        X:  180
-                                        Y:  0
-                                        Z:  0
-                                    Scale:
-                                        X:  1
-                                        Y:  0.35
-                                        Z:  0.35
-                                    Translation:
-                                        X:  -0.3
-                                        Y:  0
-                                        Z:  0
-                            Children:
-                                []
                         -   Name: Body
                             Enabled: true
                             Components:
                                 Transform:
                                     Rotation:
-                                        X:  0.72577
-                                        Y:  0
-                                        Z:  0
+                                        X:
+                                            Interpolation: CatmullRom
+                                            Wrap: false
+                                            FrameTimes: [1.5, 1.2, 1.7333]
+                                            FrameValues: [17.793, -5.4101, 99.532]
+                                        Y:
+                                            Interpolation: CatmullRom
+                                            Wrap: false
+                                            FrameTimes: [0.16667, 1, 1.9667]
+                                            FrameValues: [7.9222, 22.797, 8.379]
+                                        Z:  -12.368
                                     Scale:
                                         X:  1
                                         Y:  1
                                         Z:  1
                                     Translation:
-                                        X:  0
-                                        Y:  0
-                                        Z:  0
+                                        X:  0.016329
+                                        Y:  1.9981
+                                        Z:  -1.7863
                             Children:
-                                -   Name: Cube 1
-                                    Enabled: true
-                                    Components:
-                                        TriangleMesh:
-                                            LoopSubdivision: 0
-                                            Material: Material Black
-                                            Mesh: Pyramid
-                                        Transform:
-                                            Rotation:
-                                                X:  180
-                                                Y:  0
-                                                Z:  0
-                                            Scale:
-                                                X:  1.0201
-                                                Y:  1.5301
-                                                Z:  0.25501
-                                            Translation:
-                                                X:  -0.3
-                                                Y:  1
-                                                Z:  0
-                                    Children:
-                                        []
                                 -   Name: L Shoulder
                                     Enabled: true
                                     Components:
                                         Transform:
                                             Rotation:
-                                                X:
-                                                    Interpolation: CatmullRom
-                                                    Wrap: false
-                                                    FrameTimes: [0.4, 1.1667, 1.9, 2.8667, 0.66667, 0.93333]
-                                                    FrameValues: [-23.289, -54.512, -177.33, -13.281, -84.368, -35.268]
-                                                Y:  -50.964
+                                                X:  90
+                                                Y:  0
                                                 Z:
                                                     Interpolation: CatmullRom
                                                     Wrap: false
-                                                    FrameTimes: [1.1667, 2.1667, 2.8]
-                                                    FrameValues: [294.72, 298.56, 318.43]
+                                                    FrameTimes: [0.26667, 1, 1.1667, 1.5, 1.7333]
+                                                    FrameValues: [-90, -30.447, -10.222, 40.58, 93.042]
                                             Scale:
                                                 X:  1
                                                 Y:  1
                                                 Z:  1
                                             Translation:
-                                                X:  0.3
-                                                Y:  1.6
-                                                Z:  0
+                                                X:  0.29274
+                                                Y:  1.8411
+                                                Z:  0.22795
                                     Children:
                                         -   Name: Sphere 1
                                             Enabled: true
@@ -914,11 +727,7 @@ Root:
                                                 Transform:
                                                     Rotation:
                                                         X:  0
-                                                        Y:
-                                                            Interpolation: CatmullRom
-                                                            Wrap: false
-                                                            FrameTimes: [1.5, 2.0333, 2.7333, 0.73333, 0.23333]
-                                                            FrameValues: [0, -18.404, -39.016, -102.26, 0.50884]
+                                                        Y:  0.50884
                                                         Z:  0
                                                     Scale:
                                                         X:  1
@@ -971,7 +780,7 @@ Root:
                                                                 Z:  0
                                                     Children:
                                                         []
-                                                -   Name: Sphere 2
+                                                -   Name: Hand 1
                                                     Enabled: true
                                                     Components:
                                                         Sphere:
@@ -979,8 +788,8 @@ Root:
                                                             Quality: 4
                                                         Transform:
                                                             Rotation:
-                                                                X:  0
-                                                                Y:  0
+                                                                X:  -10.407
+                                                                Y:  49.203
                                                                 Z:  0
                                                             Scale:
                                                                 X:  0.5
@@ -992,280 +801,6 @@ Root:
                                                                 Z:  0
                                                     Children:
                                                         []
-                                -   Name: Neck
-                                    Enabled: true
-                                    Components:
-                                        Transform:
-                                            Rotation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
-                                            Scale:
-                                                X:  1
-                                                Y:  1
-                                                Z:  1
-                                            Translation:
-                                                X:  -0.3
-                                                Y:  1.8
-                                                Z:  0
-                                    Children:
-                                        -   Name: Empty Node 1
-                                            Enabled: true
-                                            Components:
-                                                Transform:
-                                                    Rotation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  0
-                                                    Scale:
-                                                        X:  1
-                                                        Y:  1
-                                                        Z:  1
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  -0.3
-                                                        Z:  0
-                                            Children:
-                                                []
-                                        -   Name: Head
-                                            Enabled: true
-                                            Components:
-                                                Sphere:
-                                                    Material: Skin
-                                                    Quality: 4
-                                                Transform:
-                                                    Rotation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  0
-                                                    Scale:
-                                                        X:  1
-                                                        Y:  1
-                                                        Z:  1
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  0.6
-                                                        Z:  0
-                                            Children:
-                                                -   Name: Hair
-                                                    Enabled: true
-                                                    Components:
-                                                        SurfaceOfRevolution:
-                                                            Curve: ../../../../../P5/Persona5Animation/assets/hair.apts
-                                                            Material: Blinn-Phong Material
-                                                            Quality: 0
-                                                        Transform:
-                                                            Rotation:
-                                                                X:  -180
-                                                                Y:  -9.9763e-06
-                                                                Z:  -180
-                                                            Scale:
-                                                                X:  0.78
-                                                                Y:  0.6
-                                                                Z:  0.9
-                                                            Translation:
-                                                                X:  6.7732e-07
-                                                                Y:  0.15
-                                                                Z:  0
-                                                    Children:
-                                                        []
-                                                -   Name: Bui_Toc
-                                                    Enabled: true
-                                                    Components:
-                                                        Transform:
-                                                            Rotation:
-                                                                X:  131.83
-                                                                Y:  1
-                                                                Z:  0
-                                                            Scale:
-                                                                X:  0.3
-                                                                Y:  0.3
-                                                                Z:  0.3
-                                                            Translation:
-                                                                X:  6.7732e-07
-                                                                Y:  0.5
-                                                                Z:  -0.3
-                                                    Children:
-                                                        -   Name: TOP
-                                                            Enabled: true
-                                                            Components:
-                                                                Sphere:
-                                                                    Material: Blinn-Phong Material
-                                                                    Quality: 4
-                                                                Transform:
-                                                                    Rotation:
-                                                                        X:
-                                                                            Interpolation: Linear
-                                                                            Wrap: false
-                                                                            FrameTimes: [0.4, 0.66667]
-                                                                            FrameValues: [40.639, 36.406]
-                                                                        Y:  0.011223
-                                                                        Z:  -179
-                                                                    Scale:
-                                                                        X:  1
-                                                                        Y:  1
-                                                                        Z:  1
-                                                                    Translation:
-                                                                        X:  0
-                                                                        Y:  0
-                                                                        Z:  0
-                                                            Children:
-                                                                -   Name: hair_top
-                                                                    Enabled: true
-                                                                    Components:
-                                                                        SurfaceOfRevolution:
-                                                                            Curve: ../../../../../P5/Persona5Animation/assets/hair4.apts
-                                                                            Material: Material Red
-                                                                            Quality: 0
-                                                                        Transform:
-                                                                            Rotation:
-                                                                                X:  139.24
-                                                                                Y:  -4.3824
-                                                                                Z:  89.185
-                                                                            Scale:
-                                                                                X:  0.5
-                                                                                Y:  1.5
-                                                                                Z:  0.1
-                                                                            Translation:
-                                                                                X:  0.9824
-                                                                                Y:  -1.0284
-                                                                                Z:  0.98858
-                                                                    Children:
-                                                                        []
-                                                                -   Name: MID
-                                                                    Enabled: true
-                                                                    Components:
-                                                                        Sphere:
-                                                                            Material: Blinn-Phong Material
-                                                                            Quality: 4
-                                                                        Transform:
-                                                                            Rotation:
-                                                                                X:
-                                                                                    Interpolation: CatmullRom
-                                                                                    Wrap: false
-                                                                                    FrameTimes: [0.63333, 0.43333, 0.96667, 1.0667, 1.2333, 2.7333, 3, 3.1667, 3.4333, 3.6333, 3.9, 4.2, 4.4667]
-                                                                                    FrameValues: [5.6202, -5, -12.603, -19.467, -55.351, -72.257, -49.975, -4.8245, 19.43, -4.3746, 7.1946, -3.5053, 2.2421]
-                                                                                Y:  6e-05
-                                                                                Z:  -2.9171e-05
-                                                                            Scale:
-                                                                                X:  0.01
-                                                                                Y:  0.01
-                                                                                Z:  0.01
-                                                                            Translation:
-                                                                                X:  0
-                                                                                Y:  -2
-                                                                                Z:  2.2
-                                                                    Children:
-                                                                        -   Name: hair_mid
-                                                                            Enabled: true
-                                                                            Components:
-                                                                                SurfaceOfRevolution:
-                                                                                    Curve: ../../../../../P5/Persona5Animation/assets/hair4.apts
-                                                                                    Material: Material Red
-                                                                                    Quality: 0
-                                                                                Transform:
-                                                                                    Rotation:
-                                                                                        X:  163.36
-                                                                                        Y:  -5.8286
-                                                                                        Z:  93.98
-                                                                                    Scale:
-                                                                                        X:  75
-                                                                                        Y:  150
-                                                                                        Z:  10
-                                                                                    Translation:
-                                                                                        X:  93.004
-                                                                                        Y:  -178.89
-                                                                                        Z:  -4.4961
-                                                                            Children:
-                                                                                []
-                                                                        -   Name: BOTTOM
-                                                                            Enabled: true
-                                                                            Components:
-                                                                                Sphere:
-                                                                                    Material: Blinn-Phong Material
-                                                                                    Quality: 4
-                                                                                Transform:
-                                                                                    Rotation:
-                                                                                        X:
-                                                                                            Interpolation: CatmullRom
-                                                                                            Wrap: false
-                                                                                            FrameTimes: [1.1, 0.93333, 1.2667, 2.7667, 3.3667, 3.0333, 3.6333, 3.9333, 4.6333, 4.2, 4.4]
-                                                                                            FrameValues: [-13.728, -2.2234e-08, -26.265, -37.287, -18.879, -20.438, 11.348, -12.272, -0.78648, 7.7426, -7.8832]
-                                                                                        Y:  1.7387e-09
-                                                                                        Z:  -1.559e-08
-                                                                                    Scale:
-                                                                                        X:  1
-                                                                                        Y:  1
-                                                                                        Z:  1
-                                                                                    Translation:
-                                                                                        X:  0
-                                                                                        Y:  -383
-                                                                                        Z:  17
-                                                                            Children:
-                                                                                -   Name: hair_bot
-                                                                                    Enabled: true
-                                                                                    Components:
-                                                                                        SurfaceOfRevolution:
-                                                                                            Curve: ../../../../../P5/Persona5Animation/assets/hair4.apts
-                                                                                            Material: Material Red
-                                                                                            Quality: 0
-                                                                                        Transform:
-                                                                                            Rotation:
-                                                                                                X:  162.45
-                                                                                                Y:  3.3563
-                                                                                                Z:  89.032
-                                                                                            Scale:
-                                                                                                X:  51
-                                                                                                Y:  150
-                                                                                                Z:  10
-                                                                                            Translation:
-                                                                                                X:  95.762
-                                                                                                Y:  -106.64
-                                                                                                Z:  72.143
-                                                                                    Children:
-                                                                                        []
-                                                -   Name: Bui
-                                                    Enabled: true
-                                                    Components:
-                                                        Sphere:
-                                                            Material: Blinn-Phong Material
-                                                            Quality: 4
-                                                        Transform:
-                                                            Rotation:
-                                                                X:  1
-                                                                Y:  1
-                                                                Z:  0
-                                                            Scale:
-                                                                X:  0.3
-                                                                Y:  0.3
-                                                                Z:  0.3
-                                                            Translation:
-                                                                X:  2.0129e-06
-                                                                Y:  0.5
-                                                                Z:  -0.3
-                                                    Children:
-                                                        []
-                                                -   Name: Mask
-                                                    Enabled: true
-                                                    Components:
-                                                        Plane:
-                                                            Material: Mask
-                                                            Subdivisions: 0
-                                                        Transform:
-                                                            Rotation:
-                                                                X:  179.6
-                                                                Y:  -2.3604e-08
-                                                                Z:  180
-                                                            Scale:
-                                                                X:  0.9
-                                                                Y:  0.5
-                                                                Z:  2
-                                                            Translation:
-                                                                X:  2.7745e-08
-                                                                Y:  0
-                                                                Z:  0.5
-                                                    Children:
-                                                        []
                                 -   Name: R Shoulder
                                     Enabled: true
                                     Components:
@@ -1274,26 +809,26 @@ Root:
                                                 X:
                                                     Interpolation: CatmullRom
                                                     Wrap: false
-                                                    FrameTimes: [0.46667, 0.66667, 1.0667]
-                                                    FrameValues: [-241, -270.17, -241.76]
+                                                    FrameTimes: [1, 0.2]
+                                                    FrameValues: [-16.675, 64]
                                                 Y:
-                                                    Interpolation: CatmullRom
+                                                    Interpolation: Linear
                                                     Wrap: false
-                                                    FrameTimes: [0.8, 2.1667, 0.26667]
-                                                    FrameValues: [70.415, 36.391, 76.957]
+                                                    FrameTimes: [1, 1.5]
+                                                    FrameValues: [-180, -98.865]
                                                 Z:
                                                     Interpolation: CatmullRom
                                                     Wrap: false
-                                                    FrameTimes: [0.26667, 0.66667, 1.3333]
-                                                    FrameValues: [150, 214.39, 150]
+                                                    FrameTimes: [0.2, 1, 1.1667, 1.3333, 1.7333]
+                                                    FrameValues: [-71, -36.937, -21.512, 2.6546, -7.713]
                                             Scale:
                                                 X:  1
                                                 Y:  1
                                                 Z:  1
                                             Translation:
-                                                X:  -0.9
-                                                Y:  1.6
-                                                Z:  0
+                                                X:  -0.90562
+                                                Y:  1.8543
+                                                Z:  0.16678
                                     Children:
                                         -   Name: Sphere 1
                                             Enabled: true
@@ -1343,13 +878,9 @@ Root:
                                             Components:
                                                 Transform:
                                                     Rotation:
-                                                        X:  0
-                                                        Y:
-                                                            Interpolation: CatmullRom
-                                                            Wrap: false
-                                                            FrameTimes: [0.66667, 1.5667]
-                                                            FrameValues: [-34.08, 0]
-                                                        Z:  -46.07
+                                                        X:  108
+                                                        Y:  -4.08
+                                                        Z:  -1.07
                                                     Scale:
                                                         X:  1
                                                         Y:  1
@@ -1401,7 +932,7 @@ Root:
                                                                 Z:  0
                                                     Children:
                                                         []
-                                                -   Name: Sphere 3
+                                                -   Name: Hand 2
                                                     Enabled: true
                                                     Components:
                                                         Sphere:
@@ -1410,8 +941,8 @@ Root:
                                                         Transform:
                                                             Rotation:
                                                                 X:  0
-                                                                Y:  0
-                                                                Z:  0
+                                                                Y:  21
+                                                                Z:  4
                                                             Scale:
                                                                 X:  0.5
                                                                 Y:  0.5
@@ -1420,6 +951,307 @@ Root:
                                                                 X:  1
                                                                 Y:  0
                                                                 Z:  0
+                                                    Children:
+                                                        []
+                                -   Name: Cube 1
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Material Black
+                                            Mesh: Pyramid
+                                        Transform:
+                                            Rotation:
+                                                X:  180
+                                                Y:  0
+                                                Z:  0
+                                            Scale:
+                                                X:  1
+                                                Y:  0.35
+                                                Z:  0.35
+                                            Translation:
+                                                X:  -0.29772
+                                                Y:  0.024713
+                                                Z:  -0.041669
+                                    Children:
+                                        []
+                                -   Name: Cube 1
+                                    Enabled: true
+                                    Components:
+                                        TriangleMesh:
+                                            LoopSubdivision: 0
+                                            Material: Material Black
+                                            Mesh: Pyramid
+                                        Transform:
+                                            Rotation:
+                                                X:  180
+                                                Y:  0
+                                                Z:  0
+                                            Scale:
+                                                X:  1.0201
+                                                Y:  1.5301
+                                                Z:  0.25501
+                                            Translation:
+                                                X:  -0.3
+                                                Y:  1
+                                                Z:  0
+                                    Children:
+                                        []
+                                -   Name: Neck
+                                    Enabled: true
+                                    Components:
+                                        Transform:
+                                            Rotation:
+                                                X:  -26
+                                                Y:  -1
+                                                Z:  -17
+                                            Scale:
+                                                X:  1
+                                                Y:  1
+                                                Z:  1
+                                            Translation:
+                                                X:  -0.3
+                                                Y:  1.8
+                                                Z:  0
+                                    Children:
+                                        -   Name: Empty Node 1
+                                            Enabled: true
+                                            Components:
+                                                Transform:
+                                                    Rotation:
+                                                        X:  0
+                                                        Y:  0
+                                                        Z:  0
+                                                    Scale:
+                                                        X:  1
+                                                        Y:  1
+                                                        Z:  1
+                                                    Translation:
+                                                        X:  0
+                                                        Y:  -0.3
+                                                        Z:  0
+                                            Children:
+                                                []
+                                        -   Name: Head
+                                            Enabled: true
+                                            Components:
+                                                Sphere:
+                                                    Material: Skin
+                                                    Quality: 4
+                                                Transform:
+                                                    Rotation:
+                                                        X:
+                                                            Interpolation: Linear
+                                                            Wrap: false
+                                                            FrameTimes: [1.3333, 1.0333]
+                                                            FrameValues: [25.92, -10]
+                                                        Y:  0
+                                                        Z:  0
+                                                    Scale:
+                                                        X:  1
+                                                        Y:  1
+                                                        Z:  1
+                                                    Translation:
+                                                        X:  0
+                                                        Y:  0.6
+                                                        Z:  0
+                                            Children:
+                                                -   Name: Hair
+                                                    Enabled: true
+                                                    Components:
+                                                        SurfaceOfRevolution:
+                                                            Curve: ../../../../../P5/Persona5Animation/assets/hair.apts
+                                                            Material: Blinn-Phong Material
+                                                            Quality: 0
+                                                        Transform:
+                                                            Rotation:
+                                                                X:  -182
+                                                                Y:  140
+                                                                Z:  -167
+                                                            Scale:
+                                                                X:  0.78
+                                                                Y:  0.6
+                                                                Z:  0.9
+                                                            Translation:
+                                                                X:  -0.05
+                                                                Y:  0.15
+                                                                Z:  0
+                                                    Children:
+                                                        []
+                                                -   Name: Bui_Toc
+                                                    Enabled: true
+                                                    Components:
+                                                        Transform:
+                                                            Rotation:
+                                                                X:  70.832
+                                                                Y:  1
+                                                                Z:  0
+                                                            Scale:
+                                                                X:  0.3
+                                                                Y:  0.3
+                                                                Z:  0.3
+                                                            Translation:
+                                                                X:  6.7732e-07
+                                                                Y:  0.5
+                                                                Z:  -0.3
+                                                    Children:
+                                                        -   Name: TOP
+                                                            Enabled: true
+                                                            Components:
+                                                                Sphere:
+                                                                    Material: Blinn-Phong Material
+                                                                    Quality: 4
+                                                                Transform:
+                                                                    Rotation:
+                                                                        X:
+                                                                            Interpolation: Linear
+                                                                            Wrap: false
+                                                                            FrameTimes: [1.6667, 1.5333]
+                                                                            FrameValues: [-89.268, -84.939]
+                                                                        Y:  0.96418
+                                                                        Z:  -0.99951
+                                                                    Scale:
+                                                                        X:  1
+                                                                        Y:  1
+                                                                        Z:  1
+                                                                    Translation:
+                                                                        X:  4.7684e-06
+                                                                        Y:  3.8147e-06
+                                                                        Z:  7.6294e-06
+                                                            Children:
+                                                                -   Name: MID
+                                                                    Enabled: true
+                                                                    Components:
+                                                                        Sphere:
+                                                                            Material: Blinn-Phong Material
+                                                                            Quality: 4
+                                                                        Transform:
+                                                                            Rotation:
+                                                                                X:
+                                                                                    Interpolation: CatmullRom
+                                                                                    Wrap: false
+                                                                                    FrameTimes: [1.3667, 1.2, 1.5, 1.6, 1.5333, 1.7333]
+                                                                                    FrameValues: [-117.11, -121.75, -118.72, -197.39, -127.11, -244.63]
+                                                                                Y:  -9.6575
+                                                                                Z:  167.49
+                                                                            Scale:
+                                                                                X:  0.1
+                                                                                Y:  0.1
+                                                                                Z:  0.1
+                                                                            Translation:
+                                                                                X:  -0.43148
+                                                                                Y:  -2.1765
+                                                                                Z:  -1.8239
+                                                                    Children:
+                                                                        -   Name: hair_mid
+                                                                            Enabled: true
+                                                                            Components:
+                                                                                SurfaceOfRevolution:
+                                                                                    Curve: ../../../../../P5/Persona5Animation/assets/hair4.apts
+                                                                                    Material: Blinn-Phong Material
+                                                                                    Quality: 0
+                                                                                Transform:
+                                                                                    Rotation:
+                                                                                        X:  129
+                                                                                        Y:  10.749
+                                                                                        Z:  92.179
+                                                                                    Scale:
+                                                                                        X:  7.5
+                                                                                        Y:  15
+                                                                                        Z:  1
+                                                                                    Translation:
+                                                                                        X:  4.9925
+                                                                                        Y:  -10.369
+                                                                                        Z:  17
+                                                                            Children:
+                                                                                []
+                                                                        -   Name: BOTTOM
+                                                                            Enabled: true
+                                                                            Components:
+                                                                                Sphere:
+                                                                                    Material: Blinn-Phong Material
+                                                                                    Quality: 4
+                                                                                Transform:
+                                                                                    Rotation:
+                                                                                        X:
+                                                                                            Interpolation: CatmullRom
+                                                                                            Wrap: false
+                                                                                            FrameTimes: [1.6, 1.4333, 1.1667, 1.1333, 1.2333, 1.3667]
+                                                                                            FrameValues: [-104.07, -110.73, -144.7, -110.73, -106.06, -82.029]
+                                                                                        Y:  -3.6734
+                                                                                        Z:  -23.44
+                                                                                    Scale:
+                                                                                        X:  0.1
+                                                                                        Y:  0.1
+                                                                                        Z:  0.1
+                                                                                    Translation:
+                                                                                        X:  -3.1522
+                                                                                        Y:  -21.62
+                                                                                        Z:  30.588
+                                                                            Children:
+                                                                                -   Name: hair_bot
+                                                                                    Enabled: true
+                                                                                    Components:
+                                                                                        SurfaceOfRevolution:
+                                                                                            Curve: ../../../../../P5/Persona5Animation/assets/hair4.apts
+                                                                                            Material: Blinn-Phong Material
+                                                                                            Quality: 0
+                                                                                        Transform:
+                                                                                            Rotation:
+                                                                                                X:  5.2972
+                                                                                                Y:  -2.4568
+                                                                                                Z:  104.68
+                                                                                            Scale:
+                                                                                                X:  50
+                                                                                                Y:  150
+                                                                                                Z:  10
+                                                                                            Translation:
+                                                                                                X:  108.42
+                                                                                                Y:  -121.2
+                                                                                                Z:  -36.838
+                                                                                    Children:
+                                                                                        []
+                                                                -   Name: hair_top
+                                                                    Enabled: true
+                                                                    Components:
+                                                                        SurfaceOfRevolution:
+                                                                            Curve: ../../../../../P5/Persona5Animation/assets/hair4.apts
+                                                                            Material: Blinn-Phong Material
+                                                                            Quality: 0
+                                                                        Transform:
+                                                                            Rotation:
+                                                                                X:  231.24
+                                                                                Y:  -0.807
+                                                                                Z:  -88.423
+                                                                            Scale:
+                                                                                X:  0.5
+                                                                                Y:  1.5
+                                                                                Z:  0.1
+                                                                            Translation:
+                                                                                X:  -0.96544
+                                                                                Y:  -1.0523
+                                                                                Z:  -0.98008
+                                                                    Children:
+                                                                        []
+                                                -   Name: Mask
+                                                    Enabled: true
+                                                    Components:
+                                                        Plane:
+                                                            Material: Kasumi mask
+                                                            Subdivisions: 0
+                                                        Transform:
+                                                            Rotation:
+                                                                X:  -172.63
+                                                                Y:  0.87337
+                                                                Z:  164.99
+                                                            Scale:
+                                                                X:  0.9
+                                                                Y:  0.5
+                                                                Z:  0
+                                                            Translation:
+                                                                X:  0
+                                                                Y:  0
+                                                                Z:  0.51
                                                     Children:
                                                         []
                                 -   Name: Cape
@@ -1447,11 +1279,7 @@ Root:
                                                     Subdivisions: 0
                                                 Transform:
                                                     Rotation:
-                                                        X:
-                                                            Interpolation: CatmullRom
-                                                            Wrap: false
-                                                            FrameTimes: [0.2, 0.66667, 1.1667, 1.4667, 2, 2.1667, 2.3333, 2.6, 2.8, 3.2667, 3.7, 4.1, 3.5, 3.4333, 3.3333]
-                                                            FrameValues: [1.1921e-07, -15.081, 10.271, 33.053, -4.8247, 13.868, 30.594, 54.698, 24.061, -29.175, 10.687, -24.506, -12.692, -24.557, -21.26]
+                                                        X:  1.1921e-07
                                                         Y:  0
                                                         Z:  0
                                                     Scale:
@@ -1460,153 +1288,311 @@ Root:
                                                         Z:  1
                                                     Translation:
                                                         X:  -0.3
-                                                        Y:
-                                                            Interpolation: CatmullRom
-                                                            Wrap: false
-                                                            FrameTimes: [2.5667, 2.8, 2.4667, 3.1667, 3.0333, 3.2667, 3.7667, 4.1333, 3.5667, 1.1667, 2.0667, 2.3, 2.4, 3.4333, 2.6667, 3.3333]
-                                                            FrameValues: [-0.86125, -1.3838, -1.1249, -1.4048, -1.4208, -1.2806, -1.3501, -1.471, -1.3682, -1.5059, -0.92463, -1.0921, -1.155, -1.2116, -1.0461, -1.3322]
-                                                        Z:
-                                                            Interpolation: CatmullRom
-                                                            Wrap: false
-                                                            FrameTimes: [0.33333, 0.66667, 0.8, 1.4333, 1.6667, 2.5667, 2.0667, 2.3667, 2.9333, 2.9667, 3.5333, 3.1667, 3.7, 3.9, 4.0667, 2.7333, 3.4667, 3.3333]
-                                                            FrameValues: [-0.1, 0.51817, -0.2713, -0.52907, -0.78684, -1.226, 0.022347, -0.67103, -0.2472, -0.12353, -0.11793, 0.30955, -0.31053, -0.022188, 0.3999, -0.95471, 0.22603, 0.33242]
+                                                        Y:  -1.5059
+                                                        Z:  -0.1
                                             Children:
                                                 []
-                -   Name: Foot 2
+                -   Name: Leg rotation 2
                     Enabled: true
                     Components:
+                        Sphere:
+                            Material: Blinn-Phong Material
+                            Quality: 4
                         Transform:
                             Rotation:
-                                X:  0
-                                Y:  0
+                                X:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [0.1, 1, 1.1667, 1.3667, 1.7333]
+                                    FrameValues: [-113, -88.222, -74.011, -40.059, -23.258]
+                                Y:  2.668e-07
                                 Z:  0
                             Scale:
-                                X:  1
-                                Y:  1
-                                Z:  1
+                                X:  0.1
+                                Y:  0.1
+                                Z:  0.1
                             Translation:
-                                X:  -0.3
-                                Y:  0.3
-                                Z:  0
+                                X:  -0.51004
+                                Y:  4.1462
+                                Z:  -1.6744
                     Children:
-                        -   Name: Leg 2
+                        -   Name: Foot 2
                             Enabled: true
                             Components:
                                 Transform:
                                     Rotation:
-                                        X:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.5333, 2.9333, 0.4, 0.63333, 1.4]
-                                            FrameValues: [-0.50333, -24.223, -0.50333, 59.963, 0.89248]
-                                        Y:  0
-                                        Z:  0
+                                        X:  -179.73
+                                        Y:  4.7209e-08
+                                        Z:  -180
                                     Scale:
-                                        X:  1
-                                        Y:  1
-                                        Z:  1
+                                        X:  10
+                                        Y:  10
+                                        Z:  10
                                     Translation:
-                                        X:  0
-                                        Y:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.5667, 2.9, 3.3333, 0.7, 1.0667]
-                                            FrameValues: [1, 0.78606, 0.69663, 0.68835, 0.98752]
-                                        Z:
-                                            Interpolation: CatmullRom
-                                            Wrap: false
-                                            FrameTimes: [2.4667, 3.2333, 0.36667, 1.2667, 0.66667]
-                                            FrameValues: [-0.033566, 0.7192, -0.033566, -0.030188, -0.80321]
+                                        X:  -1.4305e-06
+                                        Y:  -16.616
+                                        Z:  -0.078308
                             Children:
-                                -   Name: Cube 1
+                                -   Name: Leg 2
                                     Enabled: true
                                     Components:
-                                        TriangleMesh:
-                                            LoopSubdivision: 0
-                                            Material: Skin
-                                            Mesh: Cube
                                         Transform:
                                             Rotation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
+                                                X:  -2
+                                                Y:  1.2845e-06
+                                                Z:  18
                                             Scale:
-                                                X:  0.25
+                                                X:  1
                                                 Y:  1
-                                                Z:  0.25
+                                                Z:  1
                                             Translation:
-                                                X:  0
-                                                Y:  0.5
-                                                Z:  0
+                                                X:  0.2469
+                                                Y:  0.77296
+                                                Z:  0.09493
                                     Children:
-                                        []
-                                -   Name: Knee 2
-                                    Enabled: true
-                                    Components:
-                                        Sphere:
-                                            Material: Material Black
-                                            Quality: 4
-                                        Transform:
-                                            Rotation:
-                                                X:
-                                                    Interpolation: CatmullRom
-                                                    Wrap: false
-                                                    FrameTimes: [1.0333, 2.2333, 1.6333]
-                                                    FrameValues: [0, 23.934, 53.217]
-                                                Y:  0
-                                                Z:  0
-                                            Scale:
-                                                X:  0.4
-                                                Y:  0.4
-                                                Z:  0.4
-                                            Translation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
-                                    Children:
-                                        -   Name: Cube 2
+                                        -   Name: Cube 1
                                             Enabled: true
                                             Components:
                                                 TriangleMesh:
                                                     LoopSubdivision: 0
-                                                    Material: Material Black
+                                                    Material: Skin
                                                     Mesh: Cube
                                                 Transform:
                                                     Rotation:
-                                                        X:  2.1344e-08
-                                                        Y:  6.5138e-13
-                                                        Z:  1.5776e-13
+                                                        X:  0
+                                                        Y:  0
+                                                        Z:  0
                                                     Scale:
-                                                        X:  0.625
-                                                        Y:  2.5
-                                                        Z:  0.625
+                                                        X:  0.25
+                                                        Y:  1
+                                                        Z:  0.25
                                                     Translation:
-                                                        X:  1.1921e-07
-                                                        Y:  -1.25
-                                                        Z:  -9.5367e-07
+                                                        X:  0
+                                                        Y:  0.5
+                                                        Z:  0
                                             Children:
-                                                -   Name: Feet 2
+                                                []
+                                        -   Name: Knee 2
+                                            Enabled: true
+                                            Components:
+                                                Sphere:
+                                                    Material: Material Black
+                                                    Quality: 4
+                                                Transform:
+                                                    Rotation:
+                                                        X:
+                                                            Interpolation: Linear
+                                                            Wrap: false
+                                                            FrameTimes: [1.3333, 1.4667]
+                                                            FrameValues: [0, -27.695]
+                                                        Y:  0
+                                                        Z:  0
+                                                    Scale:
+                                                        X:  0.4
+                                                        Y:  0.4
+                                                        Z:  0.4
+                                                    Translation:
+                                                        X:  0
+                                                        Y:  0
+                                                        Z:  0
+                                            Children:
+                                                -   Name: Cube 2
                                                     Enabled: true
                                                     Components:
                                                         TriangleMesh:
                                                             LoopSubdivision: 0
                                                             Material: Material Black
-                                                            Mesh: Pyramid
+                                                            Mesh: Cube
                                                         Transform:
                                                             Rotation:
-                                                                X:  -0
-                                                                Y:  -7.9436e-13
-                                                                Z:  1.024e-13
+                                                                X:  2.1344e-08
+                                                                Y:  6.5138e-13
+                                                                Z:  1.5776e-13
                                                             Scale:
-                                                                X:  2.05
-                                                                Y:  0.5125
-                                                                Z:  2.05
+                                                                X:  0.625
+                                                                Y:  2.5
+                                                                Z:  0.625
+                                                            Translation:
+                                                                X:  1.1921e-07
+                                                                Y:  -1.25
+                                                                Z:  -9.5367e-07
+                                                    Children:
+                                                        -   Name: Feet 2
+                                                            Enabled: true
+                                                            Components:
+                                                                TriangleMesh:
+                                                                    LoopSubdivision: 0
+                                                                    Material: Material Black
+                                                                    Mesh: Pyramid
+                                                                Transform:
+                                                                    Rotation:
+                                                                        X:  -0
+                                                                        Y:  -7.9436e-13
+                                                                        Z:  1.024e-13
+                                                                    Scale:
+                                                                        X:  2.05
+                                                                        Y:  0.5125
+                                                                        Z:  2.05
+                                                                    Translation:
+                                                                        X:  0
+                                                                        Y:  -0.5
+                                                                        Z:  9.5367e-07
+                                                            Children:
+                                                                []
+                -   Name: Leg rotation 1
+                    Enabled: true
+                    Components:
+                        Sphere:
+                            Material: Blinn-Phong Material
+                            Quality: 4
+                        Transform:
+                            Rotation:
+                                X:
+                                    Interpolation: CatmullRom
+                                    Wrap: false
+                                    FrameTimes: [0.13333, 1, 1.3333, 1.5, 1.7333]
+                                    FrameValues: [90, 90, 68.402, 35.932, 79.792]
+                                Y:  0
+                                Z:  0
+                            Scale:
+                                X:  0.1
+                                Y:  0.1
+                                Z:  0.1
+                            Translation:
+                                X:  0.1
+                                Y:  4
+                                Z:  -1.8
+                    Children:
+                        -   Name: Foot 1
+                            Enabled: true
+                            Components:
+                                CustomProp:
+                                    Angle: 359
+                                EnvironmentMap:
+                                    Far Plane: 100
+                                    Near Plane: 0.1
+                                    Render Material: ""
+                                    Resolution (px): 400
+                                Transform:
+                                    Rotation:
+                                        X:  -179.73
+                                        Y:  4.7209e-08
+                                        Z:  -182
+                                    Scale:
+                                        X:  10
+                                        Y:  10
+                                        Z:  10
+                                    Translation:
+                                        X:  -1.4305e-06
+                                        Y:  -16.616
+                                        Z:  -0.078308
+                            Children:
+                                -   Name: Leg 1
+                                    Enabled: true
+                                    Components:
+                                        Transform:
+                                            Rotation:
+                                                X:  -2.0452
+                                                Y:  0
+                                                Z:  18.572
+                                            Scale:
+                                                X:  1
+                                                Y:  1
+                                                Z:  1
+                                            Translation:
+                                                X:  0.2469
+                                                Y:  0.77296
+                                                Z:  0.094927
+                                    Children:
+                                        -   Name: Cube 1
+                                            Enabled: true
+                                            Components:
+                                                TriangleMesh:
+                                                    LoopSubdivision: 0
+                                                    Material: Skin
+                                                    Mesh: Cube
+                                                Transform:
+                                                    Rotation:
+                                                        X:  0
+                                                        Y:  0
+                                                        Z:  0
+                                                    Scale:
+                                                        X:  0.25
+                                                        Y:  1
+                                                        Z:  0.25
+                                                    Translation:
+                                                        X:  0
+                                                        Y:  0.5
+                                                        Z:  0
+                                            Children:
+                                                []
+                                        -   Name: Knee 1
+                                            Enabled: true
+                                            Components:
+                                                Sphere:
+                                                    Material: Material Black
+                                                    Quality: 4
+                                                Transform:
+                                                    Rotation:
+                                                        X:
+                                                            Interpolation: CatmullRom
+                                                            Wrap: false
+                                                            FrameTimes: [1.3667, 1.1667]
+                                                            FrameValues: [-24.707, 0]
+                                                        Y:  0
+                                                        Z:  0
+                                                    Scale:
+                                                        X:  0.4
+                                                        Y:  0.4
+                                                        Z:  0.4
+                                                    Translation:
+                                                        X:  0
+                                                        Y:  0
+                                                        Z:  0
+                                            Children:
+                                                -   Name: Cube 1
+                                                    Enabled: true
+                                                    Components:
+                                                        TriangleMesh:
+                                                            LoopSubdivision: 0
+                                                            Material: Material Black
+                                                            Mesh: Cube
+                                                        Transform:
+                                                            Rotation:
+                                                                X:  -2.0924e-08
+                                                                Y:  6.3856e-13
+                                                                Z:  3.1429e-13
+                                                            Scale:
+                                                                X:  0.63755
+                                                                Y:  2.5503
+                                                                Z:  0.63755
                                                             Translation:
                                                                 X:  0
-                                                                Y:  -0.5
-                                                                Z:  9.5367e-07
+                                                                Y:  -1.25
+                                                                Z:  -9.5367e-07
                                                     Children:
-                                                        []
+                                                        -   Name: Feet 1
+                                                            Enabled: true
+                                                            Components:
+                                                                TriangleMesh:
+                                                                    LoopSubdivision: 0
+                                                                    Material: Material Black
+                                                                    Mesh: Pyramid
+                                                                Transform:
+                                                                    Rotation:
+                                                                        X:  -0
+                                                                        Y:  0
+                                                                        Z:  -1.7251e-13
+                                                                    Scale:
+                                                                        X:  2.0096
+                                                                        Y:  0.5024
+                                                                        Z:  2.0096
+                                                                    Translation:
+                                                                        X:  0
+                                                                        Y:  -0.49015
+                                                                        Z:  0
+                                                            Children:
+                                                                []
         -   Name: Creeper
             Enabled: true
             Components:
@@ -1618,20 +1604,20 @@ Root:
                         Y:  0
                         Z:  0
                     Scale:
-                        X:  1.5
-                        Y:  1.5
-                        Z:  1.5
+                        X:  3
+                        Y:  3
+                        Z:  3
                     Translation:
-                        X:  -1
+                        X:  -12
                         Y:  1.0038
-                        Z:  -4.6237
+                        Z:  -20.624
             Children:
                 -   Name: Torso
                     Enabled: true
                     Components:
                         TriangleMesh:
                             LoopSubdivision: 0
-                            Material: Creeper Body
+                            Material: Material Black
                             Mesh: Cube
                         Transform:
                             Rotation:
@@ -1653,16 +1639,16 @@ Root:
                     Components:
                         Transform:
                             Rotation:
-                                X:  -40
+                                X:  0
                                 Y:  0
-                                Z:  0
+                                Z:  130
                             Scale:
                                 X:  1
                                 Y:  1
                                 Z:  1
                             Translation:
                                 X:  0
-                                Y:  0.4
+                                Y:  0.3
                                 Z:  0
                     Children:
                         -   Name: Left Arm Geo
@@ -1670,7 +1656,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper Body
+                                    Material: Material Black
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1787,111 +1773,7 @@ Root:
                                         Y:  -0.7
                                         Z:  0.2
                             Children:
-                                -   Name: Sword
-                                    Enabled: true
-                                    Components:
-                                        Transform:
-                                            Rotation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
-                                            Scale:
-                                                X:  1.5
-                                                Y:  1.5
-                                                Z:  1.5
-                                            Translation:
-                                                X:  0
-                                                Y:  0
-                                                Z:  0
-                                    Children:
-                                        -   Name: Grip
-                                            Enabled: true
-                                            Components:
-                                                TriangleMesh:
-                                                    LoopSubdivision: 0
-                                                    Material: Material Black
-                                                    Mesh: Cube
-                                                Transform:
-                                                    Rotation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  0
-                                                    Scale:
-                                                        X:  0.1
-                                                        Y:  0.3
-                                                        Z:  0.1
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  0
-                                            Children:
-                                                []
-                                        -   Name: Guard
-                                            Enabled: true
-                                            Components:
-                                                TriangleMesh:
-                                                    LoopSubdivision: 0
-                                                    Material: Material Red
-                                                    Mesh: Cube
-                                                Transform:
-                                                    Rotation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  0
-                                                    Scale:
-                                                        X:  0.5
-                                                        Y:  0.1
-                                                        Z:  0.1
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  0.1
-                                                        Z:  0
-                                            Children:
-                                                []
-                                        -   Name: Blade
-                                            Enabled: true
-                                            Components:
-                                                TriangleMesh:
-                                                    LoopSubdivision: 0
-                                                    Material: Material Red
-                                                    Mesh: Cube
-                                                Transform:
-                                                    Rotation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  0
-                                                    Scale:
-                                                        X:  0.21
-                                                        Y:  0.7
-                                                        Z:  0.1
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  0.5
-                                                        Z:  0
-                                            Children:
-                                                []
-                                        -   Name: Tip
-                                            Enabled: true
-                                            Components:
-                                                TriangleMesh:
-                                                    LoopSubdivision: 0
-                                                    Material: Material Red
-                                                    Mesh: Cube
-                                                Transform:
-                                                    Rotation:
-                                                        X:  0
-                                                        Y:  0
-                                                        Z:  45
-                                                    Scale:
-                                                        X:  0.15
-                                                        Y:  0.15
-                                                        Z:  0.1
-                                                    Translation:
-                                                        X:  0
-                                                        Y:  0.85
-                                                        Z:  0
-                                            Children:
-                                                []
+                                []
                 -   Name: Right Arm
                     Enabled: true
                     Components:
@@ -1899,14 +1781,14 @@ Root:
                             Rotation:
                                 X:  0
                                 Y:  0
-                                Z:  0
+                                Z:  -147
                             Scale:
                                 X:  1
                                 Y:  1
                                 Z:  1
                             Translation:
                                 X:  0
-                                Y:  0.4
+                                Y:  0.3
                                 Z:  0
                     Children:
                         -   Name: Right Arm Geo
@@ -1914,7 +1796,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper Body
+                                    Material: Material Black
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -1938,7 +1820,7 @@ Root:
                             Rotation:
                                 X:  0
                                 Y:  0
-                                Z:  0
+                                Z:  -18
                             Scale:
                                 X:  1
                                 Y:  1
@@ -1953,7 +1835,7 @@ Root:
                             Components:
                                 Transform:
                                     Rotation:
-                                        X:  -89.992
+                                        X:  0
                                         Y:  0
                                         Z:  -0.2
                                     Scale:
@@ -1961,8 +1843,8 @@ Root:
                                         Y:  1
                                         Z:  1
                                     Translation:
-                                        X:  0
-                                        Y:  -0.1951
+                                        X:  0.1
+                                        Y:  0
                                         Z:  0
                             Children:
                                 -   Name: Left Leg Geo
@@ -1970,7 +1852,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Creeper Body
+                                            Material: Material Black
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -1982,7 +1864,7 @@ Root:
                                                 Y:  1
                                                 Z:  0.3
                                             Translation:
-                                                X:  -0.1
+                                                X:  -0.25
                                                 Y:  -0.8
                                                 Z:  1.1921e-07
                                     Children:
@@ -1992,7 +1874,7 @@ Root:
                     Components:
                         Transform:
                             Rotation:
-                                X:  30.427
+                                X:  28.427
                                 Y:  0
                                 Z:  0
                             Scale:
@@ -2009,7 +1891,7 @@ Root:
                             Components:
                                 TriangleMesh:
                                     LoopSubdivision: 0
-                                    Material: Creeper Body
+                                    Material: Material Black
                                     Mesh: Cube
                                 Transform:
                                     Rotation:
@@ -2030,7 +1912,7 @@ Root:
                             Enabled: true
                             Components:
                                 Plane:
-                                    Material: Creeper Head
+                                    Material: Default Material
                                     Subdivisions: 0
                                 Transform:
                                     Rotation:
@@ -2043,33 +1925,8 @@ Root:
                                         Z:  0.5
                                     Translation:
                                         X:  0
-                                        Y:  0.63
+                                        Y:  6.63
                                         Z:  0.3
-                            Children:
-                                []
-                        -   Name: Knockdown
-                            Enabled: true
-                            Components:
-                                Cylinder:
-                                    Material: KnockDown
-                                    Subdivisions: 3
-                                Transform:
-                                    Rotation:
-                                        X:  0
-                                        Y:
-                                            Interpolation: Linear
-                                            Wrap: false
-                                            FrameTimes: [0.066667, 5]
-                                            FrameValues: [0.31935, 1014]
-                                        Z:  0
-                                    Scale:
-                                        X:  1
-                                        Y:  0.2
-                                        Z:  1
-                                    Translation:
-                                        X:  0
-                                        Y:  1
-                                        Z:  0
                             Children:
                                 []
                 -   Name: Left Leg 2
@@ -2079,7 +1936,7 @@ Root:
                             Rotation:
                                 X:  0
                                 Y:  0
-                                Z:  0
+                                Z:  15
                             Scale:
                                 X:  1
                                 Y:  1
@@ -2094,7 +1951,7 @@ Root:
                             Components:
                                 Transform:
                                     Rotation:
-                                        X:  -89.992
+                                        X:  0
                                         Y:  0
                                         Z:  -0.20845
                                     Scale:
@@ -2102,8 +1959,8 @@ Root:
                                         Y:  1
                                         Z:  1
                                     Translation:
-                                        X:  0.5
-                                        Y:  -0.1951
+                                        X:  0.35
+                                        Y:  0
                                         Z:  0
                             Children:
                                 -   Name: Left Leg Geo
@@ -2111,7 +1968,7 @@ Root:
                                     Components:
                                         TriangleMesh:
                                             LoopSubdivision: 0
-                                            Material: Creeper Body
+                                            Material: Material Black
                                             Mesh: Cube
                                         Transform:
                                             Rotation:
@@ -2123,217 +1980,8 @@ Root:
                                                 Y:  1
                                                 Z:  0.3
                                             Translation:
-                                                X:  -0.1
+                                                X:  -0.14
                                                 Y:  -0.8
                                                 Z:  1.1921e-07
                                     Children:
                                         []
-        -   Name: Magic Circle 1
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Magic Circle
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  90
-                        Y:  0
-                        Z:  6.2706
-                    Scale:
-                        X:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [0.13333, 0.56667]
-                            FrameValues: [9.9678, -0.0021351]
-                        Y:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [0.56667, 0.13333]
-                            FrameValues: [0.28046, 9.9992]
-                        Z:  1
-                    Translation:
-                        X:  -1
-                        Y:  0.2
-                        Z:  -3
-            Children:
-                []
-        -   Name: Wall
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Pillars
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  -180
-                        Y:  2
-                        Z:  -1.7489e-06
-                    Scale:
-                        X:  10
-                        Y:  11
-                        Z:  20.016
-                    Translation:
-                        X:  -5
-                        Y:  4
-                        Z:  -11
-            Children:
-                []
-        -   Name: Wall 2
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Pillars
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  -180
-                        Y:  2
-                        Z:  -1.7489e-06
-                    Scale:
-                        X:  10
-                        Y:  11
-                        Z:  20.016
-                    Translation:
-                        X:  4
-                        Y:  4
-                        Z:  -11
-            Children:
-                []
-        -   Name: Wall 2
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Pillars
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  -180
-                        Y:  2
-                        Z:  -1.7489e-06
-                    Scale:
-                        X:  10
-                        Y:  11
-                        Z:  20.016
-                    Translation:
-                        X:  -21
-                        Y:  4
-                        Z:  -11
-            Children:
-                []
-        -   Name: Wall 2 2
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Pillars
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  -180
-                        Y:  2
-                        Z:  -1.7489e-06
-                    Scale:
-                        X:  10
-                        Y:  11
-                        Z:  20.016
-                    Translation:
-                        X:  -14
-                        Y:  4
-                        Z:  -11
-            Children:
-                []
-        -   Name: Wall 2 2 2
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Pillars
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  0
-                        Y:  90
-                        Z:  -1.7489e-06
-                    Scale:
-                        X:  10
-                        Y:  11
-                        Z:  20.016
-                    Translation:
-                        X:  -29
-                        Y:  4
-                        Z:  -11
-            Children:
-                []
-        -   Name: Wall 2 2 2 2
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Pillars
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  0
-                        Y:  90
-                        Z:  -1.7489e-06
-                    Scale:
-                        X:  10
-                        Y:  11
-                        Z:  20.016
-                    Translation:
-                        X:  -29
-                        Y:  4
-                        Z:  -4
-            Children:
-                []
-        -   Name: Smoke
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Smoke texture
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  -35
-                        Y:  30
-                        Z:  19
-                    Scale:
-                        X:  4
-                        Y:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [5.6, 5.8667]
-                            FrameValues: [2.0207, 0.61199]
-                        Z:  1
-                    Translation:
-                        X:  3
-                        Y:  4
-                        Z:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [4.9, 5.6, 5.7, 5.0333]
-                            FrameValues: [10, 6.6505, 1.7924, 7.0652]
-            Children:
-                []
-        -   Name: Red
-            Enabled: true
-            Components:
-                Plane:
-                    Material: Material Red
-                    Subdivisions: 0
-                Transform:
-                    Rotation:
-                        X:  -35
-                        Y:  30
-                        Z:  19
-                    Scale:
-                        X:  11
-                        Y:  10
-                        Z:  1
-                    Translation:
-                        X:  3
-                        Y:  4
-                        Z:
-                            Interpolation: Linear
-                            Wrap: false
-                            FrameTimes: [5.1, 5.1667]
-                            FrameValues: [10, 3.9244]
-            Children:
-                []

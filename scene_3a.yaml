@@ -44,6 +44,9 @@ Textures:
     joker_mask:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/joker_mask.png
+    kasumi_mask:
+        Bilinear: true
+        Path: ../../../../../P5/Persona5Animation/assets/AOA/kasumi_mask.png
     knockdown:
         Bilinear: true
         Path: C:/P5/Persona5Animation/assets/knockdown.png
@@ -374,6 +377,17 @@ Materials:
                     R:  0.5
                 Color Map: magic_circle_2
                 Use Texture: true
+    Mask:
+        Shader: Textured Shader
+        Uniforms:
+            DiffuseMap:
+                Color:
+                    A:  1
+                    B:  0.5
+                    G:  0.5
+                    R:  0.5
+                Color Map: kasumi_mask
+                Use Texture: true
     Material Black:
         Shader: Blinn-Phong Shader
         Uniforms:
@@ -412,40 +426,14 @@ Materials:
                 Color Map: ""
                 Use Texture: false
     Material Red:
-        Shader: Blinn-Phong Shader
+        Shader: Textured Shader
         Uniforms:
-            Diffuse:
-                Color:
-                    A:  1
-                    B:  0.11373
-                    G:  0.12157
-                    R:  0.78824
-                Color Map: ""
-                Use Texture: false
-            Emissive:
+            DiffuseMap:
                 Color:
                     A:  1
                     B:  0
                     G:  0
-                    R:  0
-                Color Map: ""
-                Use Texture: false
-            IndexOfRefraction: 1
-            Shininess: 20
-            Specular:
-                Color:
-                    A:  1
-                    B:  0.5
-                    G:  0.5
-                    R:  0.5
-                Color Map: ""
-                Use Texture: false
-            Transmittence:
-                Color:
-                    A:  1
-                    B:  0
-                    G:  0
-                    R:  0
+                    R:  1
                 Color Map: ""
                 Use Texture: false
     Pillars:
@@ -645,8 +633,8 @@ Root:
                         Show Surface Normals: true
                 Transform:
                     Rotation:
-                        X:  -33
-                        Y:  32
+                        X:  -35
+                        Y:  30
                         Z:  19
                     Scale:
                         X:  1
@@ -975,9 +963,9 @@ Root:
                                     Components:
                                         Transform:
                                             Rotation:
-                                                X:  0
-                                                Y:  0.40535
-                                                Z:  -69.275
+                                                X:  -23.289
+                                                Y:  -50.964
+                                                Z:  294.7
                                             Scale:
                                                 X:  1
                                                 Y:  1
@@ -1036,7 +1024,7 @@ Root:
                                                 Transform:
                                                     Rotation:
                                                         X:  0
-                                                        Y:  0
+                                                        Y:  0.50884
                                                         Z:  0
                                                     Scale:
                                                         X:  1
@@ -1158,7 +1146,7 @@ Root:
                                                         Z:  0
                                                     Scale:
                                                         X:  1
-                                                        Y:  1.25
+                                                        Y:  1
                                                         Z:  1
                                                     Translation:
                                                         X:  0
@@ -1170,7 +1158,7 @@ Root:
                                                     Components:
                                                         SurfaceOfRevolution:
                                                             Curve: C:/P5/Persona5Animation/assets/hair.apts
-                                                            Material: Material Red
+                                                            Material: Blinn-Phong Material
                                                             Quality: 0
                                                         Transform:
                                                             Rotation:
@@ -1178,12 +1166,12 @@ Root:
                                                                 Y:  -5.009e-06
                                                                 Z:  -180
                                                             Scale:
-                                                                X:  0.9
-                                                                Y:  0.9
+                                                                X:  0.78
+                                                                Y:  0.6
                                                                 Z:  0.9
                                                             Translation:
                                                                 X:  6.9938e-07
-                                                                Y:  0
+                                                                Y:  0.15
                                                                 Z:  0
                                                     Children:
                                                         []
@@ -1212,7 +1200,7 @@ Root:
                                                             Components:
                                                                 SurfaceOfRevolution:
                                                                     Curve: C:/P5/Persona5Animation/assets/hair4.apts
-                                                                    Material: Blinn-Phong Material
+                                                                    Material: Material Red
                                                                     Quality: 0
                                                                 Transform:
                                                                     Rotation:
@@ -1234,11 +1222,11 @@ Root:
                                                             Components:
                                                                 SurfaceOfRevolution:
                                                                     Curve: C:/P5/Persona5Animation/assets/hair4.apts
-                                                                    Material: Blinn-Phong Material
+                                                                    Material: Material Red
                                                                     Quality: 0
                                                                 Transform:
                                                                     Rotation:
-                                                                        X:  100
+                                                                        X:  105
                                                                         Y:  -15
                                                                         Z:  -90
                                                                     Scale:
@@ -1256,12 +1244,12 @@ Root:
                                                             Components:
                                                                 SurfaceOfRevolution:
                                                                     Curve: C:/P5/Persona5Animation/assets/hair4.apts
-                                                                    Material: Blinn-Phong Material
+                                                                    Material: Material Red
                                                                     Quality: 0
                                                                 Transform:
                                                                     Rotation:
-                                                                        X:  111
-                                                                        Y:  -15
+                                                                        X:  103
+                                                                        Y:  -3
                                                                         Z:  -90
                                                                     Scale:
                                                                         X:  0.5
@@ -1273,14 +1261,35 @@ Root:
                                                                         Z:  7
                                                             Children:
                                                                 []
+                                                -   Name: Mask
+                                                    Enabled: true
+                                                    Components:
+                                                        Plane:
+                                                            Material: Mask
+                                                            Subdivisions: 0
+                                                        Transform:
+                                                            Rotation:
+                                                                X:  -180
+                                                                Y:  -5.009e-06
+                                                                Z:  -180
+                                                            Scale:
+                                                                X:  0.9
+                                                                Y:  0.5
+                                                                Z:  2
+                                                            Translation:
+                                                                X:  6.9938e-07
+                                                                Y:  0
+                                                                Z:  0.5
+                                                    Children:
+                                                        []
                                 -   Name: R Shoulder
                                     Enabled: true
                                     Components:
                                         Transform:
                                             Rotation:
-                                                X:  17
-                                                Y:  75.722
-                                                Z:  249.49
+                                                X:  -241
+                                                Y:  76.957
+                                                Z:  150
                                             Scale:
                                                 X:  1
                                                 Y:  1
@@ -1339,8 +1348,8 @@ Root:
                                                 Transform:
                                                     Rotation:
                                                         X:  0
-                                                        Y:  14.627
-                                                        Z:  -22.895
+                                                        Y:  -34.08
+                                                        Z:  -46.07
                                                     Scale:
                                                         X:  1
                                                         Y:  1
@@ -1375,7 +1384,7 @@ Root:
                                                     Enabled: true
                                                     Components:
                                                         Sphere:
-                                                            Material: Material Red
+                                                            Material: Blinn-Phong Material
                                                             Quality: 4
                                                         Transform:
                                                             Rotation:
@@ -2141,8 +2150,8 @@ Root:
                         X:
                             Interpolation: BSpline
                             Wrap: false
-                            FrameTimes: [0.26667, 0.83333, 1, 1.5667, 2.2333, 2.2, 0.76667]
-                            FrameValues: [6.3208, 3.1393, 2.5746, 2.351, 5.9221, 2.324, 3.6281]
+                            FrameTimes: [0.26667, 1, 1.5667, 2.2333, 2.2, 0.76667]
+                            FrameValues: [6.3208, 2.5746, 2.351, 5.9221, 2.324, 3.6281]
                         Y:  2.75
                         Z:  3
             Children:
@@ -2159,20 +2168,20 @@ Root:
                         Y:  0
                         Z:  -0
                     Scale:
-                        X:  0
-                        Y:  0
-                        Z:  0
+                        X:  2
+                        Y:  2
+                        Z:  1
                     Translation:
                         X:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [0.46667, 0.83333, 2.4, 2.0667]
-                            FrameValues: [5.3735, 2.9611, 5.2939, 2.6666]
+                            FrameTimes: [0.46667, 0.83333, 2.4, 1.8]
+                            FrameValues: [5.3735, 1.5697, 5.2939, 1.3259]
                         Y:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [0.56667, 0.8, 2, 2.4667]
-                            FrameValues: [5.9903, 4.0157, 3.924, 5.8736]
+                            FrameTimes: [0.56667, 0.83333, 1.7667, 2.4667]
+                            FrameValues: [5.9903, 3.3088, 3.1111, 5.8736]
                         Z:  0
             Children:
                 []
@@ -2197,8 +2206,8 @@ Root:
                         Z:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [0.46667, 0.83333, 2.4333, 1.8]
-                            FrameValues: [6.8791, 3.6707, 6.4524, 3.5137]
+                            FrameTimes: [0.46667, 2.4333, 0.83333, 1.8]
+                            FrameValues: [6.8791, 6.843, 3.3625, 3.135]
             Children:
                 []
         -   Name: Chatbox
@@ -2225,8 +2234,8 @@ Root:
                         Y:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [1.8667, 2.3, 11.2, 11.333]
-                            FrameValues: [0, 0.89977, 0.89897, 3.4197e-05]
+                            FrameTimes: [1.8667, 2.3, 11.167, 11.333]
+                            FrameValues: [0, 0.99211, 0.99131, 3.4197e-05]
                         Z:  0
                     Translation:
                         X:  3.1
@@ -2337,8 +2346,8 @@ Root:
                                 Y:
                                     Interpolation: Linear
                                     Wrap: false
-                                    FrameTimes: [7.5333, 7.7667, 2.0333]
-                                    FrameValues: [0.79973, 0.01063, 0.8]
+                                    FrameTimes: [7.5333, 7.8, 2.0333]
+                                    FrameValues: [0.79973, 0.0011946, 0.8]
                                 Z:  0.0010656
                             Translation:
                                 X:  -3.5
@@ -2358,15 +2367,15 @@ Root:
                         Y:  32
                         Z:  19
                     Scale:
-                        X:  2
+                        X:  2.4
                         Y:  2
                         Z:  1
                     Translation:
                         X:
                             Interpolation: Linear
                             Wrap: false
-                            FrameTimes: [7.9, 7.6667, 11.133, 11.3]
-                            FrameValues: [3.4505, 5.7891, 3.4508, 5.7217]
+                            FrameTimes: [8.0333, 7.6667, 11.133, 11.3]
+                            FrameValues: [3.4133, 5.7891, 3.417, 5.7217]
                         Y:  4.3
                         Z:  4.5
             Children:
@@ -2494,6 +2503,6 @@ Root:
                     Translation:
                         X:  -29
                         Y:  4
-                        Z:  -6
+                        Z:  -4
             Children:
                 []
